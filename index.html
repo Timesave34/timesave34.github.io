@@ -17,6 +17,26 @@ button { width:100%; padding:10px; margin-top:10px; background:#2e7d32; color:#f
 .cart { background:#fff; margin:15px; padding:15px; border-radius:10px; }
 .toast { position:fixed; bottom:20px; left:50%; transform:translateX(-50%); background:#2e7d32; color:#fff; padding:10px 15px; border-radius:8px; display:none; }
 p { margin:5px 0; }
+
+  #topBtn, #bottomBtn {
+position: fixed;
+right: 15px;
+padding: 10px;
+border: none;
+border-radius: 8px;
+background: #2e7d32;
+color: white;
+cursor: pointer;
+}
+
+#topBtn {
+bottom: 70px;
+}
+
+#bottomBtn {
+bottom: 20px;
+} 
+
 </style>
 </head>
   
@@ -201,7 +221,10 @@ p { margin:5px 0; }
 <h2>Your Order</h2>
 <ul id="cartList"></ul>
 <button onclick="sendOrder()">Order by Email</button>
-</div><div id="toast" class="toast"></div><script>
+</div><div id="toast" class="toast"></div>
+  
+<script>
+  
 var cart = {};
 
 var products = {
@@ -288,5 +311,19 @@ function sendOrder() {
 
   window.location.href = link;
 }
-</script></body>
+
+  function goTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function goBottom() {
+  window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+}
+
+</script>
+
+<button id="topBtn" onclick="goTop()">⬆ Top</button>
+<button id="bottomBtn" onclick="goBottom()">⬇ Bottom</button>
+
+</body>
 </html>
