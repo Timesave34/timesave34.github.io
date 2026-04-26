@@ -1,1 +1,280 @@
+<!DOCTYPE html><html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plant Shop</title>
+<style>
+body { font-family: Arial; background:#f0f7f0; margin:0; color:#000; }
+.header { background:#2e7d32; color:#fff; padding:15px; text-align:center; }
+.top-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 5px; }
+.top-grid img { width: 100%; border-radius: 4px; }
+.top-grid a { text-align:center; text-decoration:none; color:#000; }
+.card { background:#fff; margin:15px; padding:15px; border-radius:10px; }
+.soldout-text {
+  color: red;
+  font-weight: bold;
+}
+  
+img { width:100%; border-radius:10px; }
+button { width:100%; padding:10px; margin-top:10px; background:#2e7d32; color:#fff; border:none; border-radius:6px; }
+.qty { display:flex; align-items:center; justify-content:center; gap:10px; margin-top:10px; }
+.qty button { width:40px; }
+.cart { background:#fff; margin:15px; padding:15px; border-radius:10px; }
+.toast { position:fixed; bottom:20px; left:50%; transform:translateX(-50%); background:#2e7d32; color:#fff; padding:10px 15px; border-radius:8px; display:none; }
+p { margin:5px 0; }
+</style>
+</head>
+<body><div class="header"><h1>Ian's Plants For Sale</h1>
+  
+  <p> Demo website to show the plants. Ordering option wiil go live in v2.
+  </p>
+</div>
+  <div class="top-grid">
+  <a href="#gerbera"><img src="PSorangegerbera.jpg"><p>Gerbera</p></a>
+  <a href="#lupins"><img src="PSpurplelupin.jpg"><p>Lupin</p></a>
+  <a href="#petunias"><img src="PSpetunia.png"><p>Petunia</p></a>
+  <a href="#cosmos"><img src="PScosmos.jpg"><p>Cosmos</p></a>
+  
+  <a href="#acre"><img src="PSacre.jpg"><p>Acre</p></a>
+  <a href="#baytree"><img src="PSbaytree.jpg"><p>Bay Tree</p></a>  
+  <a href="#blackbamboo1"><img src="PSblackbamboo1.jpg"><p>BlackBamboo</p></a> 
+  <a href="#blackbamboo2"><img src="PSblackbamboo2.jpg"><p>BlackBamboo</p></a>  
+  <a href="#blackbamboo3"><img src="PSblackbamboo3.jpg"><p>BlackBamboo</p></a>  
+  <a href="#lilac"><img src="PSlilac.jpg"><p>Lilac Tree</p></a>  
+  </div>
+<div id="gerbera" class="card">
+<img src="PSorangegerbera.jpg">
+<h2>Orange Gerbera - &pound;4</h2>
+<p><b>Type:</b> Tender perennial</p>
+<p><b>Height:</b> 30 to 45cm</p>
+<p><b>Spread:</b> 25 to 30cm</p>
+<p>Bright orange daisy-like flowers, perfect for pots and borders. Great for adding bold colour.</p>
+<p><b>Location:</b> Full sun or partial shade</p>
+<p><b>Soil:</b> Well-drained, fertile soil</p>
+<div class="qty">
+<button onclick="changeQty('Orange Gerbera', -1)">-</button>
+<span id="qty-Orange Gerbera">0</span>
+<button onclick="changeQty('Orange Gerbera', 1)">+</button>
+</div></div>
 
+<div id="lupins" class="card">
+<img src="PSpurplelupin.jpg">
+<h2>Lupins - &pound;5</h2>
+<p><b>Type:</b> Perennial</p>
+<p><b>Height:</b> 60 to 120cm</p>
+<p><b>Spread:</b> 30 to 50cm</p>
+<p>Tall, striking flower spikes in vibrant colours. Ideal for cottage garden borders.</p>
+<p><b>Location:</b> Full sun</p>
+<p><b>Soil:</b> Slightly acidic, well-drained soil</p>
+<div class="qty">
+<button onclick="changeQty('Lupins', -1)">-</button>
+<span id="qty-Lupins">0</span>
+<button onclick="changeQty('Lupins', 1)">+</button>
+</div></div>
+
+<div id="petunias" class="card">
+<img src="PSpetunia.png">
+<h2>Petunias - &pound;3</h2>
+<p><b>Type:</b> Annual</p>
+<p><b>Height:</b> 20 to 30cm</p>
+<p><b>Spread:</b> 30 to 60cm</p>
+<p>Masses of colourful blooms all summer. Excellent for baskets, pots, and bedding.</p>
+<p><b>Location:</b> Full sun</p>
+<p><b>Soil:</b> Light, well-drained soil</p>
+<div class="qty">
+<button onclick="changeQty('Petunias', -1)">-</button>
+<span id="qty-Petunias">0</span>
+<button onclick="changeQty('Petunias', 1)">+</button>
+</div></div>
+
+<div id="cosmos" class="card">
+<img src="PScosmos.jpg">
+<h2>Cosmos - &pound;3</h2>
+<p><b>Type:</b> Annual</p>
+<p><b>Height:</b> 60 to 120cm</p>
+<p><b>Spread:</b> 30 to 60cm</p>
+<p>Light, airy flowers that attract bees and butterflies. Easy to grow and long flowering.</p>
+<p><b>Location:</b> Full sun</p>
+<p><b>Soil:</b> Poor to average, well-drained soil</p>
+<div class="qty">
+<button onclick="changeQty('Cosmos', -1)">-</button>
+<span id="qty-Cosmos">0</span>
+<button onclick="changeQty('Cosmos', 1)">+</button>
+</div></div>
+
+<div id="acre" class="card">
+<img src="PSacre.jpg">
+<h2>Japanese Acre - &pound;40</h2>
+<p><b>Type:</b> Deciduous shrub/tree</p>
+<p><b>Height:</b> 2 to 5m</p>
+<p><b>Spread:</b> 2 to 4m</p>
+<p>Elegant, slow-growing tree with stunning foliage colour, especially in autumn.</p>
+<p><b>Location:</b> Partial shade, sheltered</p>
+<p><b>Soil:</b> Moist, well-drained, slightly acidic soil</p>
+<div class="qty">
+<button onclick="changeQty('acre', -1)">-</button>
+<span id="qty-acre">0</span>
+<button disabled>+</button>
+<p class="soldout-text">Sold Out</p>
+</div></div>
+
+<div id="baytree" class="card">
+<img src="PSbaytree.jpg">
+<h2>Bay Tree - &pound;25</h2>
+<p><b>Type:</b> Evergreen tree</p>
+<p><b>Height:</b> Up to 8m (can be kept smaller in pots)</p>
+<p><b>Spread:</b> 2 to 4m</p>
+<p>Aromatic leaves used in cooking. Can be clipped into attractive shapes.</p>
+<p><b>Location:</b> Full sun or partial shade</p>
+<p><b>Soil:</b> Well-drained soil</p>
+<div class="qty">
+<button onclick="changeQty('baytree', -1)">-</button>
+<span id="qty-baytree">0</span>
+<button onclick="changeQty('baytree', 1)">+</button>
+</div></div>
+
+<div id="blackbamboo1" class="card">
+<img src="PSblackbamboo1.jpg">
+<h2>Black Bamboo - &pound;30</h2>
+<p><b>Type:</b> Evergreen bamboo</p>
+<p><b>Height:</b> 3 to 6m</p>
+<p><b>Spread:</b> 2 to 4m</p>
+<p>Elegant bamboo with striking black stems. Great for screening and modern gardens.</p>
+<p><b>Location:</b> Full sun or partial shade</p>
+<p><b>Soil:</b> Moist, well-drained soil</p>
+<div class="qty">
+<button onclick="changeQty('blackbamboo1', -1)">-</button>
+<span id="qty-blackbamboo1">0</span>
+<button onclick="changeQty('blackbamboo1', 1)">+</button>
+</div></div>
+<div id="blackbamboo2" class="card">
+<img src="PSblackbamboo2.jpg">
+<h2>Black Bamboo - &pound;25</h2>
+<p><b>Type:</b> Evergreen bamboo</p>
+<p><b>Height:</b> 3 to 6m</p>
+<p><b>Spread:</b> 2 to 4m</p>
+<p>Elegant bamboo with striking black stems. Great for screening and modern gardens.</p>
+<p><b>Location:</b> Full sun or partial shade</p>
+<p><b>Soil:</b> Moist, well-drained soil</p>
+<div class="qty">
+<button onclick="changeQty('blackbamboo2', -1)">-</button>
+<span id="qty-blackbamboo2">0</span>
+<button onclick="changeQty('blackbamboo2', 1)">+</button>
+</div></div>
+<div id="blackbamboo3" class="card">
+<img src="PSblackbamboo3.jpg">
+<h2>Black Bamboo - &pound;25</h2>
+<p><b>Type:</b> Evergreen bamboo</p>
+<p><b>Height:</b> 3 to 6m</p>
+<p><b>Spread:</b> 2 to 4m</p>
+<p>Elegant bamboo with striking black stems. Great for screening and modern gardens.</p>
+<p><b>Location:</b> Full sun or partial shade</p>
+<p><b>Soil:</b> Moist, well-drained soil</p>
+<div class="qty">
+<button onclick="changeQty('blackbamboo3', -1)">-</button>
+<span id="qty-blackbamboo3">0</span>
+<button onclick="changeQty('blackbamboo3', 1)">+</button>
+</div></div>
+
+<div id="lilac" class="card">
+<img src="PSlilac.jpg">
+<h2>Lilac Tree - &pound;25</h2>
+<p><b>Type:</b> Deciduous shrub/tree</p>
+<p><b>Height:</b> 3 to 7m</p>
+<p><b>Spread:</b> 2 to 5m</p>
+<p>Highly fragrant spring purple flowers. A classic garden favourite.</p>
+<p><b>Location:</b> Full sun</p>
+<p><b>Soil:</b> Fertile, well-drained soil</p>
+<div class="qty">
+<button onclick="changeQty('Lilac', -1)">-</button>
+<span id="qty-Lilac">0</span>
+<button onclick="changeQty('Lilac', 1)">+</button>
+</div></div>
+
+<div class="cart">
+<h2>Your Order</h2>
+<ul id="cartList"></ul>
+<button onclick="sendOrder()">Order by Email</button>
+</div><div id="toast" class="toast"></div><script>
+var cart = {};
+
+var products = {
+  'Orange Gerbera': 4,
+  'Lupins': 5,
+  'Petunias': 3,
+  'Cosmos': 3,
+  'acre': 40,
+  'baytree': 25,
+  'blackbamboo1': 30,
+  'blackbamboo2': 25,
+  'blackbamboo3': 25,
+  'Lilac': 25
+};
+
+var soldOut = ['acre'];
+
+function showToast(msg) {
+  var t = document.getElementById('toast');
+  t.textContent = msg;
+  t.style.display = 'block';
+  setTimeout(function(){ t.style.display = 'none'; }, 2000);
+}
+
+functionhangeQtyhangeufunctionhangeQty(item, change) {
+
+  if (soldOut.includes(item)) {
+    showToast(item + ' is sold out');
+    return;
+  }
+
+  if (!cart[item]) cart[item] = 0;
+  cart[item] += change;
+  if (cart[item] < 0) cart[item] = 0;
+
+  document.getElementById('qty-' + item).textContent = cart[item];
+  updateCart();
+
+  if (change > 0) showToast(item + ' added');
+}
+
+function updateCart() {
+  var list = document.getElementById('cartList');
+  list.innerHTML = '';
+  for (var item in cart) {
+    if (cart[item] > 0) {
+      var li = document.createElement('li');
+      li.textContent = item + ' x ' + cart[item];
+      list.appendChild(li);
+    }
+  }
+}
+
+function sendOrder() {
+  var hasItems = false;
+  var body = "Hi, I'd like to order:\n\n";
+  var total = 0;
+
+  for (var item in cart) {
+    if (cart[item] > 0) {
+      hasItems = true;
+      body += item + ' x ' + cart[item] + ' - GBP ' + (products[item] * cart[item]) + "\n";
+      total += products[item] * cart[item];
+    }
+  }
+
+  if (!hasItems) {
+    alert('Your cart is empty');
+    return;
+  }
+
+  body += "\nTotal: GBP " + total;
+
+  var email = 'ianbeeton@hotmail.co.uk';
+  var subject = 'Plant Order';
+
+  var link = 'mailto:' + email +
+    '?subject=' + encodeURIComponent(subject) +
+    '&body=' + encodeURIComponent(body);
+
+  window.location.href = link;
+}
+</script></body>
+</html>
