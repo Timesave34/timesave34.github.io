@@ -212,7 +212,8 @@ function showToast(msg) {
   setTimeout(function(){ t.style.display = 'none'; }, 2000);
 }
 
-functionhangeQtyhangeufunctionhangeQty(item, change) {
+
+function changeQty(item, change) {
 
   if (soldOut.includes(item)) {
     showToast(item + ' is sold out');
@@ -223,15 +224,18 @@ functionhangeQtyhangeufunctionhangeQty(item, change) {
   cart[item] += change;
   if (cart[item] < 0) cart[item] = 0;
 
-  document.getElementById('qty-' + item).textContent = cart[item];
+  var el = document.getElementById('qty-' + item);
+  if (el) el.textContent = cart[item];
+
   updateCart();
 
   if (change > 0) showToast(item + ' added');
 }
 
 function updateCart() {
-  var list = document.getElementById('qty-' + item.replaceAll(' ', ''))
+  var list = document.getElementById('cartList');
   list.innerHTML = '';
+
   for (var item in cart) {
     if (cart[item] > 0) {
       var li = document.createElement('li');
