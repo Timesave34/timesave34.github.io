@@ -107,7 +107,8 @@ p { margin:5px 0; }
 <div class="qty">
 <button onclick="changeQty('acre', -1)">-</button>
 <span id="qty-acre">0</span>
-<button onclick="changeQty('acre', 1)">+</button>
+<button disabled>+</button>
+<p><b>Sold Out</b></p>
 </div></div>
 
 <div id="baytree" class="card">
@@ -189,12 +190,21 @@ p { margin:5px 0; }
 <button onclick="sendOrder()">Order by Email</button>
 </div><div id="toast" class="toast"></div><script>
 var cart = {};
+
 var products = {
   'Orange Gerbera': 4,
   'Lupins': 5,
   'Petunias': 3,
-  'Cosmos': 3
+  'Cosmos': 3,
+  'acre': 40,
+  'baytree': 25,
+  'blackbamboo1': 30,
+  'blackbamboo2': 25,
+  'blackbamboo3': 25,
+  'Lilac': 25
 };
+
+var soldOut = ['acre'];
 
 function showToast(msg) {
   var t = document.getElementById('toast');
@@ -203,13 +213,20 @@ function showToast(msg) {
   setTimeout(function(){ t.style.display = 'none'; }, 2000);
 }
 
-function changeQty(item, change) {
+functionhangeQtyhangeufunctionhangeQty(item, change) {
+
+  if (soldOut.includes(item)) {
+    showToast(item + ' is sold out');
+    return;
+  }
+
   if (!cart[item]) cart[item] = 0;
   cart[item] += change;
   if (cart[item] < 0) cart[item] = 0;
 
   document.getElementById('qty-' + item).textContent = cart[item];
   updateCart();
+
   if (change > 0) showToast(item + ' added');
 }
 
