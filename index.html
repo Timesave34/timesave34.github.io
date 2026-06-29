@@ -7,9 +7,9 @@ body { font-family: Arial; background:#f0f7f0; margin-left:10%; margin-right:10%
 .bannerx { background:#34c23b; color:#000000; padding:0px; text-align:center; }
 
 .gallery{display:grid; grid-template-columns:2fr 1fr; gap:2px; margin:2px; }
-.gallery-main img{width:100%;left:0px;height:420px;object-fit:cover;cursor:pointer;}
+.gallery-main img{width:100%;left:0px;height:420px;object-fit:cover;cursor:pointer;border-radius: 2px;}
 .gallery-side{display:grid;grid-template-rows:1fr 1fr;gap:2px;}
-.gallery-side img{width:100%;left:0px;height:207px;object-fit:cover;cursor:pointer;}
+.gallery-side img{width:100%;left:0px;height:207px;object-fit:cover;cursor:pointer;border-radius: 2px;}
 .gallery img{border-radius:2px;}
 .galleryControls{display:flex;justify-content:center;align-items:center;gap:10px;margin:2px;}
 .galleryControls button{width:50px;font-size:26px;}
@@ -52,6 +52,33 @@ p { margin:5px 0; }
   cursor: pointer;
 }
 
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: 1fr;   /* Stack everything vertically */
+  }
+  
+  .gallery-side {
+    display: none;   /* Hide side images on mobile (exactly like Rightmove) */
+  }
+  
+  .gallery-main img {
+    height: auto;    /* Let it adjust naturally on phone */
+    max-height: 55vh; /* Optional: prevent it from being too tall */
+  }
+}
+
+/* Optional: If you want to show the side images below on mobile instead of hiding them */
+@media (max-width: 768px) {
+  /* .gallery-side {
+    display: grid;
+    grid-template-columns: 1fr 1fr;   /* side-by-side below main */
+    grid-template-rows: auto;
+  }
+  .gallery-side img {
+    height: 180px;
+  } */
+}
 </style>
 </head> 
   
