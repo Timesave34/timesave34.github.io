@@ -14,6 +14,10 @@ body { font-family: Arial; background:#f0f7f0; margin:0px; padding: 0 20px; colo
 .galleryControls{display:flex;justify-content:center;align-items:center;gap:10px;margin:2px;}
 .galleryControls button{width:50px;font-size:26px;}
 
+.otop-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; padding: 5px; }
+.otop-grid img { width: 100%; border-radius: 4px; }
+.otop-grid a { text-align:center; text-decoration:none; color:#000; }
+
 .card { background:#DAE8DA; margin:15px; padding:15px; border-radius:10px; text-align:center; }
 img { width:100%; max-width: 400px; border-radius:2px; display: block; margin: auto; }
 button { width:100%; padding:10px; margin-top:10px; background:#2e7d32; color:#fff; border:none; border-radius:6px; }
@@ -220,8 +224,10 @@ Victoria plum tree, greenhouse and shed.
 
   
   <div class="bannerx"> <h2>Gym hidden storage</h2></div>
-  <div class="top-grid">
+  <div class="otop-grid">
+    <a onclick="openLightbox('gymstorageb1.jpg')"><img src="gymstorage1.jpg"><p></p></a>
    <a onclick="openLightbox('gymstorage1.jpg')"><img src="gymstorage1.jpg"><p></p></a>
+    <a onclick="openLightbox('gymstorageb2.jpg')"><img src="gymstorage2.jpg"><p></p></a>
    <a onclick="openLightbox('gymstorage2.jpg')"><img src="gymstorage2.jpg"><p></p></a>
   </div>
 
