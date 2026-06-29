@@ -80,40 +80,16 @@ p { margin:5px 0; }
    <a onclick="openLightbox('GE2.jpg')"><img src="GE2.jpg"><p>Area:679.2m<sup>2</sup>, Perimeter: 114.85m</p></a>
   </div>
 
-  <div class="bannerx">
-<h2>South facing back garden</h2>
-</div>
+  <div class="bannerx"> <h2>South facing back garden</h2> </div>
 
 <div class="gallery">
-
-    <div class="gallery-main">
-        <img id="gardenMain" src="bg01.jpg"
-             onclick="openLightbox(gardenPhotos[gardenCurrent])">
+    <div class="gallery-main"> <img id="gardenMain" src="bg01.jpg" onclick="openLightbox(gardenPhotos[gardenCurrent])"> </div>
+    <div class="gallery-side"> 
+      <img id="gardenSide1" src="bg02.jpg" onclick="openLightbox(gardenPhotos[(gardenCurrent+1)%gardenPhotos.length])">
+      <img id="gardenSide2" src="bg03.jpg" onclick="openLightbox(gardenPhotos[(gardenCurrent+2)%gardenPhotos.length])">
     </div>
-
-    <div class="gallery-side">
-
-        <img id="gardenSide1"
-             src="bg02.jpg"
-             onclick="openLightbox(gardenPhotos[(gardenCurrent+1)%gardenPhotos.length])">
-
-        <img id="gardenSide2"
-             src="bg03.jpg"
-             onclick="openLightbox(gardenPhotos[(gardenCurrent+2)%gardenPhotos.length])">
-
-    </div>
-
 </div>
-
-<div class="galleryControls">
-
-<button onclick="gardenPrevious()">❮</button>
-
-<span id="gardenCounter"></span>
-
-<button onclick="gardenNext()">❯</button>
-
-</div>
+<div class="galleryControls"> <button onclick="gardenPrevious()">❮</button> <span id="gardenCounter"></span> <button onclick="gardenNext()">❯</button> </div>
 
 <p>
 &nbsp;&nbsp;Large south garden 300.7m², perimeter 72.73m.
@@ -261,7 +237,6 @@ document.addEventListener('keydown', e => {
 });
 
 const gardenPhotos=[
-
 "bg01.jpg",
 "bg02.jpg",
 "bg03.jpg",
@@ -270,6 +245,44 @@ const gardenPhotos=[
 "bg06.jpg",
 "bg07.jpg",
 "bg08.jpg"
+"h2.jpg",
+"h4.jpg",
+"h3.jpg",
+"GE1.jpg",
+"GE2.jpg",
+"lounge01.jpg",
+"lounge02.jpg",
+"lounge03.jpg",
+"dr01.jpg",
+"dr02.jpg",
+"dr03.jpg",
+"dr04.jpg",
+"k1.jpg",
+"k2.jpg",
+"k3.jpg",
+"k4.jpg",
+"br01.jpg",
+"br01.jpg",
+"br01.jpg",
+"gbed01.jpg",
+"gbed02.jpg",
+"abed01.jpg",
+"abed02.jpg",
+"gym01.jpg",
+"gym02.jpg",
+"sr01.jpg",
+"sr02.jpg",
+"sr03.jpg",
+"b4012.jpg",
+"b402.jpg",
+"garage1.jpg",
+"garage1.jpg",
+"d01.jpg",
+"logstore01.jpg",
+"attic1.jpg",
+"attic2.jpg",
+"gymstorage1.jpg",
+"gymstorage2.jpg"
 
 ];
 
