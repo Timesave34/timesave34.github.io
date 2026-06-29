@@ -245,11 +245,7 @@ Victoria plum tree, greenhouse and shed.
 <script>
 
 let autoPlay = setInterval(hpicNext, 4000);
-
-function resetAutoPlay() {
-  clearInterval(autoPlay);
-  autoPlay = setInterval(hpicNext, 4000);
-}
+function resetAutoPlay() {  clearInterval(autoPlay);  autoPlay = setInterval(hpicNext, 4000);}
   
 function openLightbox(src) {
   document.getElementById('lightbox-img').src = src;
@@ -330,18 +326,8 @@ document.getElementById("hpicCounter").innerHTML=
 
 }
 
-
-  function hpicNext() {
-  resetAutoPlay();
-  hpicCurrent = (hpicCurrent + 1) % hpicPhotos.length;
-  updateGallery();
-}
-
-function hpicPrevious() {
-  resetAutoPlay();
-  hpicCurrent = (hpicCurrent - 1 + hpicPhotos.length) % hpicPhotos.length;
-  updateGallery();
-}
+function hpicNext() {  resetAutoPlay();  hpicCurrent = (hpicCurrent + 1) % hpicPhotos.length;  updateGallery();}
+function hpicPrevious() {  resetAutoPlay();  hpicCurrent = (hpicCurrent - 1 + hpicPhotos.length) % hpicPhotos.length;  updateGallery();}
 
 hpicRefresh();
   
