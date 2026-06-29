@@ -83,13 +83,13 @@ p { margin:5px 0; }
   <div class="bannerx"> <h2>South facing back garden</h2> </div>
 
 <div class="gallery">
-    <div class="gallery-main"> <img id="gardenMain" src="bg01.jpg" onclick="openLightbox(gardenPhotos[gardenCurrent])"> </div>
+    <div class="gallery-main"> <img id="hpicMain" src="bg01.jpg" onclick="openLightbox(hpicPhotos[hpicCurrent])"> </div>
     <div class="gallery-side"> 
-      <img id="gardenSide1" src="bg02.jpg" onclick="openLightbox(gardenPhotos[(gardenCurrent+1)%gardenPhotos.length])">
-      <img id="gardenSide2" src="bg03.jpg" onclick="openLightbox(gardenPhotos[(gardenCurrent+2)%gardenPhotos.length])">
+      <img id="hpicSide1" src="bg02.jpg" onclick="openLightbox(hpicPhotos[(hpicCurrent+1)%hpicPhotos.length])">
+      <img id="hpicSide2" src="bg03.jpg" onclick="openLightbox(hpicPhotos[(hpicCurrent+2)%hpicPhotos.length])">
     </div>
 </div>
-<div class="galleryControls"> <button onclick="gardenPrevious()">❮</button> <span id="gardenCounter"></span> <button onclick="gardenNext()">❯</button> </div>
+<div class="galleryControls"> <button onclick="hpicPrevious()">❮</button> <span id="hpicCounter"></span> <button onclick="hpicNext()">❯</button> </div>
 
 <p>
 &nbsp;&nbsp;Large south garden 300.7m², perimeter 72.73m.
@@ -236,7 +236,7 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeLightbox();
 });
 
-const gardenPhotos=[
+const hpicPhotos=[
 "bg01.jpg",
 "bg02.jpg",
 "bg03.jpg",
@@ -286,47 +286,47 @@ const gardenPhotos=[
 
 ];
 
-let gardenCurrent=0;
+let hpicCurrent=0;
 
-function gardenRefresh(){
+function hpicRefresh(){
 
-document.getElementById("gardenMain").src=
-gardenPhotos[gardenCurrent];
+document.getElementById("hpicMain").src=
+hpicPhotos[hpicCurrent];
 
-document.getElementById("gardenSide1").src=
-gardenPhotos[(gardenCurrent+1)%gardenPhotos.length];
+document.getElementById("hpicSide1").src=
+hpicPhotos[(hpicCurrent+1)%hpicPhotos.length];
 
-document.getElementById("gardenSide2").src=
-gardenPhotos[(gardenCurrent+2)%gardenPhotos.length];
+document.getElementById("hpicSide2").src=
+hpicPhotos[(hpicCurrent+2)%hpicPhotos.length];
 
-document.getElementById("gardenCounter").innerHTML=
-(gardenCurrent+1)+" / "+gardenPhotos.length;
-
-}
-
-function gardenNext(){
-
-gardenCurrent++;
-
-if(gardenCurrent>=gardenPhotos.length)
-gardenCurrent=0;
-
-gardenRefresh();
+document.getElementById("hpicCounter").innerHTML=
+(hpicCurrent+1)+" / "+hpicPhotos.length;
 
 }
 
-function gardenPrevious(){
+function hpicNext(){
 
-gardenCurrent--;
+hpicCurrent++;
 
-if(gardenCurrent<0)
-gardenCurrent=gardenPhotos.length-1;
+if(hpicCurrent>=hpicPhotos.length)
+hpicCurrent=0;
 
-gardenRefresh();
+hpicRefresh();
 
 }
 
-gardenRefresh();
+function hpicPrevious(){
+
+hpicCurrent--;
+
+if(hpicCurrent<0)
+hpicCurrent=hpicPhotos.length-1;
+
+hpicRefresh();
+
+}
+
+hpicRefresh();
   
 function goTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
