@@ -324,9 +324,17 @@ document.getElementById("hpicCounter").innerHTML=
 
 }
 
-
-function hpicNext(){hpicCurrent++;if(hpicCurrent>=hpicPhotos.length) hpicCurrent=0; hpicRefresh(); }
-function hpicPrevious(){ hpicCurrent--; if(hpicCurrent<0)  hpicCurrent=hpicPhotos.length-1; hpicRefresh(); }
+function hpicNext(){
+  hpicCurrent++;
+  if(hpicCurrent>=hpicPhotos.length) 
+    hpicCurrent=0; 
+    hpicRefresh(); 
+}
+function hpicPrevious(){ 
+  hpicCurrent--; 
+  if(hpicCurrent<0)  
+    hpicCurrent=hpicPhotos.length-1; 
+    hpicRefresh(); }
 
 hpicRefresh();
   
