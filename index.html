@@ -1,182 +1,320 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html><html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>27 Glenholme Rd, Farsley, LS285BY £675,000 </title>
+<title>27 Glenholme Rd, Farsley, LS285BY £675,000</title>
 <style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: Arial; background: #f0f7f0; color: #000; padding-bottom: 120px; }
+body { font-family: Arial; background:#f0f7f0; margin:0; color:#000; padding-bottom: 120px; }
+.header { background:#ffffff; color:#000000; padding:10px; text-align:center; }
+.bannerx { background:#34c23b; color:#000000; padding:0px; text-align:center; }
 
-/* Header */
-.prop-header { background: #2e7d32; color: #fff; padding: 14px 16px; }
-.price { font-size: 24px; font-weight: bold; margin-bottom: 4px; }
-.prop-header h1 { font-size: 16px; font-weight: normal; margin-bottom: 4px; }
-.prop-header p { font-size: 13px; color: #a5d6a7; }
+.gallery{display:grid; grid-template-columns:2fr 1fr; gap:6px; margin:10px; }
+.gallery-main img{width:100%;height:420px;object-fit:cover;cursor:pointer;}
+.gallery-side{display:grid;grid-template-rows:1fr 1fr;gap:6px;}
+.gallery-side img{width:100%;height:207px;object-fit:cover;cursor:pointer;}
+.gallery img{border-radius:8px;}
+.galleryControls{display:flex;justify-content:center;align-items:center;gap:20px;margin:10px;}
+.galleryControls button{width:50px;font-size:26px;}
 
-/* Hero image grid */
-.hero-grid { display: grid; grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; gap: 3px; height: 280px; background: #000; }
-.hero-grid a { display: block; overflow: hidden; position: relative; cursor: pointer; }
-.hero-grid a:first-child { grid-row: 1 / 3; }
-.hero-grid img { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.15s; }
-.hero-grid a:hover img { opacity: 0.88; }
-.img-label { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.55)); color: #fff; font-size: 12px; padding: 20px 8px 7px; text-align: center; }
-.photo-count { position: absolute; bottom: 8px; right: 10px; background: rgba(0,0,0,0.6); color: #fff; font-size: 12px; padding: 3px 8px; border-radius: 4px; }
+.card { background:#DAE8DA; margin:15px; padding:15px; border-radius:10px; text-align:center; }
+img { width:100%; max-width: 400px; border-radius:2px; display: block; margin: auto; }
+button { width:100%; padding:10px; margin-top:10px; background:#2e7d32; color:#fff; border:none; border-radius:6px; }
+p { margin:5px 0; }
 
-/* Key features */
-.features { margin: 14px; background: #e8f5e9; border-radius: 8px; padding: 12px 14px; }
-.features h3 { font-size: 14px; font-weight: bold; color: #1b5e20; margin-bottom: 8px; }
-.features ul { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 5px; }
-.features li { font-size: 13px; padding-left: 16px; position: relative; }
-.features li::before { content: "✓"; position: absolute; left: 0; color: #2e7d32; font-weight: bold; }
+#topBtn, #bottomBtn {position: fixed; right: 5px; width: 20%; max-width: 45px; padding: 2px; border: none; border-radius: 4px; background: #2e7d32; color: white; cursor: pointer; }
 
-/* Section dividers */
-.section-bar { background: #e8f5e9; border-left: 4px solid #2e7d32; padding: 8px 14px; margin: 14px 0 4px; font-size: 14px; font-weight: bold; color: #1b5e20; }
-
-/* Thumbnail grids */
-.thumb-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-bottom: 2px; }
-.thumb-grid a { display: block; overflow: hidden; position: relative; cursor: pointer; aspect-ratio: 4/3; }
-.thumb-grid img { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.15s; }
-.thumb-grid a:hover img { opacity: 0.85; }
-.thumb-label { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.45); color: #fff; font-size: 10px; padding: 3px 4px; text-align: center; }
-
-/* Full size cards (below fold) */
-.card { background: #DAE8DA; margin: 15px; padding: 15px; border-radius: 10px; text-align: center; }
-.card img { width: 100%; max-width: 400px; border-radius: 2px; display: block; margin: auto; }
-.card h2 { font-size: 16px; margin: 10px 0 4px; }
-.card p { font-size: 13px; margin: 5px 0; }
-
-/* Lightbox */
-.lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 1000; flex-direction: column; align-items: center; justify-content: center; }
-.lightbox.active { display: flex; }
-.lb-close { color: #fff; background: #2e7d32; border: none; border-radius: 6px; padding: 12px 32px; font-size: 18px; cursor: pointer; margin-bottom: 12px; font-family: Arial; }
-.lb-hint { color: #aaa; font-size: 13px; margin-bottom: 12px; }
-#lb-img { max-width: 95vw; max-height: 75vh; object-fit: contain; border-radius: 3px; cursor: pointer; }
-
-/* Nav buttons */
-#topBtn, #bottomBtn { position: fixed; right: 5px; width: 20%; max-width: 45px; padding: 2px; border: none; border-radius: 4px; background: #2e7d32; color: white; cursor: pointer; }
 #topBtn { bottom: 110px; }
-#bottomBtn { bottom: 60px; }
+
+#bottomBtn { bottom: 60px; } 
+
+#lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  z-index: 1000;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#lightbox.active { display: flex; }
+#lightbox-close {
+  color: white;
+  background: #2e7d32;
+  border-radius: 6px;
+  padding: 10px 24px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-bottom: 12px;
+  user-select: none;
+}
+#lightbox-img {
+  max-width: 95vw;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
 </style>
-</head>
-
+</head> 
+  
 <body>
-
-  <div class="prop-header">
-    <div class="price">£675,000</div>
-    <h1>27 Glenholme Road, Farsley, LS28 5BY</h1>
-    <p>Detached bungalow &bull; 4 bedrooms &bull; Large south-facing garden</p>
+  <div class="header"><h1>27 Glenholme Road, Farsley, LS285BY</h1>
+    <p>Detatched 4 bedroom dorma bungalow with a large south facing garden, in a quiet cul-de-sac.</p>
+    <p>£675,000.</p>
+    <p>Situated in a sought after area of Farsley close to local amenities & public transport including New Pudsey train station.</p>
   </div>
+ <p>Note: All area & perimeter figures have been taken from Google earth.</p>
 
-  <!-- Hero image grid: large left, 2 stacked right -->
-  <div class="hero-grid">
-    <a href="#" onclick="openLb('h2.jpg'); return false;">
-      <img src="h2.jpg" alt="Front of house">
-      <div class="img-label">Front</div>
-    </a>
-    <a href="#" onclick="openLb('h4.jpg'); return false;">
-      <img src="h4.jpg" alt="Side of house">
-      <div class="img-label">Side</div>
-    </a>
-    <a href="#" onclick="openLb('h3.jpg'); return false;">
-      <img src="h3.jpg" alt="Rear of house">
-      <div class="img-label">Rear</div>
-      <div class="photo-count">See all photos</div>
-    </a>
+  <div class="bannerx"> <h2>House</h2></div>
+  <div class="top-grid">
+   <a onclick="openLightbox('h2.jpg')"><img src="h2.jpg"><p>Front</p></a>
+   <a onclick="openLightbox('h4.jpg')"><img src="h4.jpg"><p>Side</p></a>
+   <a onclick="openLightbox('h3.jpg')"><img src="h3.jpg"><p>Back</p></a>
+  </div>
+  <p>&nbsp;&nbsp;Located in Farsley in a quiet cul-de-sac. Large south facing plot 679.2m<sup>2</sup>, perimiter 144.82m</p>
+  <p>&nbsp;&nbsp;Front lawn contains Grass Grid's which allows vehicles up to 20 tonnes to park without damaging the lawn.</> </p>
+
+  <div class="bannerx"> <h2>House</h2></div>
+  <div class="top-grid">
+   <a onclick="openLightbox('GE1.jpg')"><img src="GE1.jpg"><p>Aerial view</p></a>
+   <a onclick="openLightbox('GE2.jpg')"><img src="GE2.jpg"><p>Area:679.2m<sup>2</sup>, Perimeter: 114.85m</p></a>
   </div>
 
-  <!-- Key features -->
-  <div class="features">
-    <h3>Key features</h3>
-    <ul>
-      <li>4 bedrooms</li>
-      <li>Detached bungalow</li>
-      <li>South-facing garden</li>
-      <li>Grass grid driveway (20 tonne rated)</li>
-      <li>Plot: 679.2m<sup>2</sup>, perimeter: 114.85m</li>
-      <li>Farsley, LS28 5BY</li>
-    </ul>
-  </div>
+  <div class="bannerx">
+<h2>South facing back garden</h2>
+</div>
 
-  <!-- Aerial -->
-  <div class="section-bar">Aerial views</div>
-  <div class="thumb-grid">
-    <a href="#" onclick="openLb('GE1.jpg'); return false;">
-      <img src="GE1.jpg" alt="Aerial view">
-      <div class="thumb-label">Aerial view</div>
-    </a>
-    <a href="#" onclick="openLb('GE2.jpg'); return false;">
-      <img src="GE2.jpg" alt="Plot area">
-      <div class="thumb-label">Area: 679.2m<sup>2</sup></div>
-    </a>
-  </div>
+<div class="gallery">
 
-  <!-- Garden -->
-  <div class="section-bar">South-facing back garden</div>
-  <div class="thumb-grid">
-    <a href="#" onclick="openLb('bg01.jpg'); return false;"><img src="bg01.jpg" alt="Garden"><div class="thumb-label"></div></a>
-    <a href="#" onclick="openLb('bg02.jpg'); return false;"><img src="bg02.jpg" alt="Garden"><div class="thumb-label"></div></a>
-    <a href="#" onclick="openLb('bg03.jpg'); return false;"><img src="bg03.jpg" alt="Garden"><div class="thumb-label"></div></a>
-    <a href="#" onclick="openLb('bg04.jpg'); return false;"><img src="bg04.jpg" alt="Garden"><div class="thumb-label"></div></a>
-    <a href="#" onclick="openLb('bg05.jpg'); return false;"><img src="bg05.jpg" alt="Garden"><div class="thumb-label"></div></a>
-    <a href="#" onclick="openLb('bg06.jpg'); return false;"><img src="bg06.jpg" alt="Garden"><div class="thumb-label"></div></a>
-    <a href="#" onclick="openLb('bg07.jpg'); return false;"><img src="bg07.jpg" alt="Garden"><div class="thumb-label"></div></a>
-    <a href="#" onclick="openLb('bg08.jpg'); return false;"><img src="bg08.jpg" alt="Garden"><div class="thumb-label"></div></a>
-  </div>
+    <div class="gallery-main">
+        <img id="gardenMain" src="bg01.jpg"
+             onclick="openLightbox(gardenPhotos[gardenCurrent])">
+    </div>
 
-  <!-- Lounge -->
-  <div class="section-bar">Lounge</div>
-  <div class="thumb-grid">
-    <a href="#" onclick="openLb('lounge01.jpg'); return false;"><img src="lounge01.jpg" alt="Lounge"><div class="thumb-label"></div></a>
-    <a href="#" onclick="openLb('lounge02.jpg'); return false;"><img src="lounge02.jpg" alt="Lounge"><div class="thumb-label"></div></a>
-    <a href="#" onclick="openLb('lounge03.jpg'); return false;"><img src="lounge03.jpg" alt="Lounge"><div class="thumb-label"></div></a>
-  </div>
+    <div class="gallery-side">
 
-  <!-- Full size detail cards (scrolled to from lightbox or links) -->
-  <div id="h2" class="card">
-    <img src="h2.jpg" alt="House from front">
-    <h2>House from front</h2>
-    <p>Grass grids rated to take vehicles up to 20 tonnes without damaging the lawn.</p>
-  </div>
-  <div id="h4" class="card">
-    <img src="h4.jpg" alt="House from side">
-    <h2>House from the side</h2>
-    <p>Large driveway.</p>
-  </div>
-  <div id="h3" class="card">
-    <img src="h3.jpg" alt="House from rear">
-    <h2>House from rear</h2>
-    <p>South-facing garden.</p>
-  </div>
-  <div id="ge1" class="card">
-    <img src="GE1.jpg" alt="Aerial view">
-    <h2>Aerial view</h2>
-  </div>
-  <div id="ge2" class="card">
-    <img src="GE2.jpg" alt="Plot dimensions">
-    <h2>Plot dimensions</h2>
-    <p>Area: 679.2m<sup>2</sup> &bull; Perimeter: 114.85m</p>
-  </div>
+        <img id="gardenSide1"
+             src="bg02.jpg"
+             onclick="openLightbox(gardenPhotos[(gardenCurrent+1)%gardenPhotos.length])">
 
-  <!-- Lightbox overlay -->
-  <div class="lightbox" id="lightbox">
-    <button class="lb-close" onclick="closeLb()">&#10005; Close photo</button>
-    <div class="lb-hint">Tap the photo or press Esc to close</div>
-    <img id="lb-img" src="" onclick="closeLb()" alt="Full size photo">
-  </div>
+        <img id="gardenSide2"
+             src="bg03.jpg"
+             onclick="openLightbox(gardenPhotos[(gardenCurrent+2)%gardenPhotos.length])">
 
-  <button id="topBtn" onclick="goTop()">&#11014; Top</button>
-  <button id="bottomBtn" onclick="goBottom()">&#11015; Down</button>
+    </div>
+
+</div>
+
+<div class="galleryControls">
+
+<button onclick="gardenPrevious()">❮</button>
+
+<span id="gardenCounter"></span>
+
+<button onclick="gardenNext()">❯</button>
+
+</div>
+
+<p>
+&nbsp;&nbsp;Large south garden 300.7m², perimeter 72.73m.
+Two original eating apple trees, Morillo cherry tree,
+Victoria plum tree, greenhouse and shed.
+</p>
+
+  <p>&nbsp;&nbsp;Large south garden 300.7m<sup>2</sup>, perimiter 72.73m. Two original eating apple trees from when the street was an orchard. One Morillo cherry tree & one Victoria plum tree. An 8ft x 6ft greenhouse & an 8ft x 6ft storage shed.</p>
+  
+  <div class="bannerx"> <h2>Lounge</h2></div>
+  <div class="top-grid">
+   <a onclick="openLightbox('lounge01.jpg')"><img src="lounge01.jpg"><p></p></a>
+   <a onclick="openLightbox('lounge02.jpg')"><img src="lounge02.jpg"><p></p></a>
+   <a onclick="openLightbox('lounge03.jpg')"><img src="lounge03.jpg"><p></p></a>
+  </div>
+  <p>&nbsp;&nbsp;South facing. Solid oak floor 20mm thick. Large aluminium sliding patio door leading to rear patio & garden.</p>
+
+  <div class="bannerx"> <h2>Dining Room</h2></div>
+  <div class="top-grid">
+   <a onclick="openLightbox('dr01.jpg')"><img src="dr01.jpg"><p></p></a>
+   <a onclick="openLightbox('dr02.jpg')"><img src="dr02.jpg"><p></p></a>
+   <a onclick="openLightbox('dr03.jpg')"><img src="dr03.jpg"><p></p></a>
+   <a onclick="openLightbox('dr04.jpg')"><img src="dr04.jpg"><p></p></a>
+  </div>
+  <p>&nbsp;&nbsp;Large dining room with french doors opening onto lounge.</p>
+
+  <div class="bannerx"> <h2>Kitchen</h2></div>
+  <div class="top-grid">
+   <a onclick="openLightbox('k1.jpg')"><img src="k1.jpg"><p></p></a>
+   <a onclick="openLightbox('k2.jpg')"><img src="k2.jpg"><p></p></a>
+   <a onclick="openLightbox('k3.jpg')"><img src="k3.jpg"><p></p></a>
+   <a onclick="openLightbox('k4.jpg')"><img src="k4.jpg"><p></p></a>
+  </div>
+  <p>&nbsp;&nbsp;Double steam oven with integrated microwave, SMEG dishwasher, large Haier washing machine, Samsung fridge freezer, large 4 burner gas hob.</p>
+
+  <div class="bannerx"> <h2>Bathroom</h2></div>
+  <div class="top-grid">
+   <a onclick="openLightbox('br01.jpg')"><img src="br01.jpg"><p></p></a>
+   <a onclick="openLightbox('br01.jpg')"><img src="br02.jpg"><p></p></a>
+   <a onclick="openLightbox('br01.jpg')"><img src="br03.jpg"><p></p></a>
+  </div>
+  <p>&nbsp;&nbsp;Large jacuzzi bath, toilet & sink with plenty of storage & a large towel rail radiator.</p>
+
+  <div class="bannerx"> <h2>Bedroom 1</h2></div>
+  <div class="top-grid">
+   <a onclick="openLightbox('gbed01.jpg')"><img src="gbed01.jpg"><p></p></a>
+   <a onclick="openLightbox('gbed02.jpg')"><img src="gbed02.jpg"><p></p></a>
+  </div>
+  <p>&nbsp;&nbsp;Plenty of light as its south facing with another west facing window for evening sun. It can easily accomodate a double bed. Wardrobes & storage.</p>
+  
+  <div class="bannerx"> <h2>Bedroom 2</h2></div>
+  <div class="top-grid">
+   <a onclick="openLightbox('abed01.jpg')"><img src="abed01.jpg"><p></p></a>
+   <a onclick="openLightbox('abed02.jpg')"><img src="abed02.jpg"><p></p></a>
+  </div>
+  <p>&nbsp;&nbsp;Plenty of light as its south facing with another east facing window for morning sun. It can easily accomodate a double bed. Wardrobes & storage.</p>
+  
+  <div class="bannerx"> <h2>Bedroom 3</h2></div>
+  <div class="top-grid">
+   <a onclick="openLightbox('gym01.jpg')"><img src="gym01.jpg"><p></p></a>
+   <a onclick="openLightbox('gym02.jpg')"><img src="gym02.jpg"><p></p></a>
+  </div>
+  <p>&nbsp;&nbsp;Currently being used as a gym, but this bedroom can easily accomodate a double bed. It has 1 double wardrobe with 2 large hidden storage rooms hidden in the wall.</p>
+
+    <div class="bannerx"> <h2>Shower room</h2></div>
+  <div class="top-grid">
+   <a onclick="openLightbox('sr01.jpg')"><img src="sr01.jpg"><p></p></a>
+   <a onclick="openLightbox('sr02.jpg')"><img src="sr02.jpg"><p></p></a>
+   <a onclick="openLightbox('sr03.jpg')"><img src="sr03.jpg"><p></p></a>
+  </div>
+  <p>&nbsp;&nbsp;Double shower with easy clean waterproof IPSL panels so no grouting needed.</p>
+
+  <div class="bannerx"> <h2>Bedroom 4</h2></div>
+  <div class="top-grid">
+   <a onclick="openLightbox('b4012.jpg')"><img src="b401.jpg"><p>Front</p></a>
+   <a onclick="openLightbox('b402.jpg')"><img src="b402.jpg"><p>Side</p></a>
+   <a onclick="openLightbox('b403.jpg')"><img src="b403.jpg"><p>Back</p></a>
+  </div>
+<p>&nbsp;&nbsp;Plenty of light as its south facing. There are 5 fitted wardrobes & 14 draws for storage.</p>
+  
+<div id="h2" class="card">
+<img src="h2.jpg">
+<h2>House from front. Grass grids will take vehicles up to 20 tonnes.</h2>
+<p>????</p>
+</div>
+<div id="h4" class="card">
+<img src="h4.jpg">
+<h2>House from the side</h2>
+<p>Large driveway.</p>
+</div>
+<div id="h3" class="card">
+<img src="h3.jpg">
+<h2>House from rear</h2>
+<p>South facing garden.</p>
+</div>
+
+  <div class="bannerx"> <h2>Garage/h2></div>
+  <div class="top-grid">
+   <a onclick="openLightbox('garage1.jpg')"><img src="garage1.jpg"><p>Front</p></a>
+   <a onclick="openLightbox('garage1.jpg')"><img src="garage1.jpg"><p>Front</p></a>
+    <a onclick="openLightbox('d01.jpg')"><img src="d01.jpg"><p>Front</p></a>
+    <a onclick="openLightbox('logstore01.jpg')"><img src="logstore01.jpg"><p>Front</p></a>
+  </div>
+<p>&nbsp;&nbsp;Plenty of room in the paneled & insulated garage. With 12mm rubbermat flooring & tumble dryer.</p>
+<p>&nbsp;&nbsp;Long driveway for cars & logstoreoutdoor storage unitPlenty of room in the paneled & insulated garage. With 12mm rubbermat flooring & tumble dryer.</p>
+
+<p>House hidden storage</p>
+  <div class="bannerx"> <h2>Attic</h2></div>
+  <div class="top-grid">
+   <a onclick="openLightbox('attic1.jpg')"><img src="attic1.jpg"><p></p></a>
+   <a onclick="openLightbox('attic2.jpg')"><img src="attic2.jpg"><p></p></a>
+  </div>
+  <p>&nbsp;&nbsp;The attic is boarded & insulated & its large enough to walk around upright. Plenty of room for storage.</p>
+  
+  <div class="bannerx"> <h2>Gym storage</h2></div>
+  <div class="top-grid">
+   <a onclick="openLightbox('gymstorage1.jpg')"><img src="gymstorage1.jpg"><p></p></a>
+   <a onclick="openLightbox('gymstorage2.jpg')"><img src="gymstorage2.jpg"><p></p></a>
+  </div>
+  
+
+
+<div id="gym2" class="card">
+<img src="gymstorage2.jpg">
+<h2>Gym storage</h2>
+</div>
+
+<!-- Lightbox overlay -->
+<div id="lightbox">
+  <div id="lightbox-close" onclick="closeLightbox()">✕ Close</div>
+  <img id="lightbox-img" src="" onclick="closeLightbox()">
+</div>
 
 <script>
-function openLb(src) {
-  document.getElementById('lb-img').src = src;
+function openLightbox(src) {
+  document.getElementById('lightbox-img').src = src;
   document.getElementById('lightbox').classList.add('active');
+  return false; // prevents the href anchor jump
 }
-function closeLb() {
+function closeLightbox() {
   document.getElementById('lightbox').classList.remove('active');
 }
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeLb();
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeLightbox();
 });
+
+const gardenPhotos=[
+
+"bg01.jpg",
+"bg02.jpg",
+"bg03.jpg",
+"bg04.jpg",
+"bg05.jpg",
+"bg06.jpg",
+"bg07.jpg",
+"bg08.jpg"
+
+];
+
+let gardenCurrent=0;
+
+function gardenRefresh(){
+
+document.getElementById("gardenMain").src=
+gardenPhotos[gardenCurrent];
+
+document.getElementById("gardenSide1").src=
+gardenPhotos[(gardenCurrent+1)%gardenPhotos.length];
+
+document.getElementById("gardenSide2").src=
+gardenPhotos[(gardenCurrent+2)%gardenPhotos.length];
+
+document.getElementById("gardenCounter").innerHTML=
+(gardenCurrent+1)+" / "+gardenPhotos.length;
+
+}
+
+function gardenNext(){
+
+gardenCurrent++;
+
+if(gardenCurrent>=gardenPhotos.length)
+gardenCurrent=0;
+
+gardenRefresh();
+
+}
+
+function gardenPrevious(){
+
+gardenCurrent--;
+
+if(gardenCurrent<0)
+gardenCurrent=gardenPhotos.length-1;
+
+gardenRefresh();
+
+}
+
+gardenRefresh();
+  
 function goTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
@@ -185,5 +323,10 @@ function goBottom() {
 }
 </script>
 
+
+<button id="topBtn" onclick="goTop()">⬆ Top</button>
+<button id="bottomBtn" onclick="goBottom()">⬇ Down</button>
 </body>
 </html>
+
+
