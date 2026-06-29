@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>27 Glenholme Rd, Farsley, LS285BY £675,000</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Arial; background: #f0f7f0; color: #000; padding-bottom: 120px; }
+
+/* Header */
+.prop-header { background: #2e7d32; color: #fff; padding: 14px 16px; }
+.price { font-size: 24px; font-weight: bold; margin-bottom: 4px; }
+.prop-header h1 { font-size: 16px; font-weight: normal; margin-bottom: 4px; }
+.prop-header p { font-size: 13px; color: #a5d6a7; }
+
+/* Hero image grid */
+.hero-grid { display: grid; grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; gap: 3px; height: 280px; background: #000; }
+.hero-grid a { display: block; overflow: hidden; position: relative; cursor: pointer; }
+.hero-grid a:first-child { grid-row: 1 / 3; }
+.hero-grid img { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.15s; }
+.hero-grid a:hover img { opacity: 0.88; }
+.img-label { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.55)); color: #fff; font-size: 12px; padding: 20px 8px 7px; text-align: center; }
+.photo-count { position: absolute; bottom: 8px; right: 10px; background: rgba(0,0,0,0.6); color: #fff; font-size: 12px; padding: 3px 8px; border-radius: 4px; }
+
+/* Key features */
+.features { margin: 14px; background: #e8f5e9; border-radius: 8px; padding: 12px 14px; }
+.features h3 { font-size: 14px; font-weight: bold; color: #1b5e20; margin-bottom: 8px; }
+.features ul { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 5px; }
+.features li { font-size: 13px; padding-left: 16px; position: relative; }
+.features li::before { content: "✓"; position: absolute; left: 0; color: #2e7d32; font-weight: bold; }
+
+/* Section dividers */
+.section-bar { background: #e8f5e9; border-left: 4px solid #2e7d32; padding: 8px 14px; margin: 14px 0 4px; font-size: 14px; font-weight: bold; color: #1b5e20; }
+
+/* Thumbnail grids */
+.thumb-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-bottom: 2px; }
+.thumb-grid a { display: block; overflow: hidden; position: relative; cursor: pointer; aspect-ratio: 4/3; }
+.thumb-grid img { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.15s; }
+.thumb-grid a:hover img { opacity: 0.85; }
+.thumb-label { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.45); color: #fff; font-size: 10px; padding: 3px 4px; text-align: center; }
+
+/* Full size cards (below fold) */
+.card { background: #DAE8DA; margin: 15px; padding: 15px; border-radius: 10px; text-align: center; }
+.card img { width: 100%; max-width: 400px; border-radius: 2px; display: block; margin: auto; }
+.card h2 { font-size: 16px; margin: 10px 0 4px; }
+.card p { font-size: 13px; margin: 5px 0; }
+
+/* Lightbox */
+.lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 1000; flex-direction: column; align-items: center; justify-content: center; }
+.lightbox.active { display: flex; }
+.lb-close { color: #fff; background: #2e7d32; border: none; border-radius: 6px; padding: 12px 32px; font-size: 18px; cursor: pointer; margin-bottom: 12px; font-family: Arial; }
+.lb-hint { color: #aaa; font-size: 13px; margin-bottom: 12px; }
+#lb-img { max-width: 95vw; max-height: 75vh; object-fit: contain; border-radius: 3px; cursor: pointer; }
+
+/* Nav buttons */
+#topBtn, #bottomBtn { position: fixed; right: 5px; width: 20%; max-width: 45px; padding: 2px; border: none; border-radius: 4px; background: #2e7d32; color: white; cursor: pointer; }
+#topBtn { bottom: 110px; }
+#bottomBtn { bottom: 60px; }
+</style>
+</head>
+
+<body>
+
+  <div class="prop-header">
+    <div class="price">£675,000</div>
+    <h1>27 Glenholme Road, Farsley, LS28 5BY</h1>
+    <p>Detached bungalow &bull; 4 bedrooms &bull; Large south-facing garden</p>
+  </div>
+
+  <!-- Hero image grid: large left, 2 stacked right -->
+  <div class="hero-grid">
+    <a href="#" onclick="openLb('h2.jpg'); return false;">
+      <img src="h2.jpg" alt="Front of house">
+      <div class="img-label">Front</div>
+    </a>
+    <a href="#" onclick="openLb('h4.jpg'); return false;">
+      <img src="h4.jpg" alt="Side of house">
+      <div class="img-label">Side</div>
+    </a>
+    <a href="#" onclick="openLb('h3.jpg'); return false;">
+      <img src="h3.jpg" alt="Rear of house">
+      <div class="img-label">Rear</div>
+      <div class="photo-count">See all photos</div>
+    </a>
+  </div>
+
+  <!-- Key features -->
+  <div class="features">
+    <h3>Key features</h3>
+    <ul>
+      <li>4 bedrooms</li>
+      <li>Detached bungalow</li>
+      <li>South-facing garden</li>
+      <li>Grass grid driveway (20 tonne rated)</li>
+      <li>Plot: 679.2m<sup>2</sup>, perimeter: 114.85m</li>
+      <li>Farsley, LS28 5BY</li>
+    </ul>
+  </div>
+
+  <!-- Aerial -->
+  <div class="section-bar">Aerial views</div>
+  <div class="thumb-grid">
+    <a href="#" onclick="openLb('GE1.jpg'); return false;">
+      <img src="GE1.jpg" alt="Aerial view">
+      <div class="thumb-label">Aerial view</div>
+    </a>
+    <a href="#" onclick="openLb('GE2.jpg'); return false;">
+      <img src="GE2.jpg" alt="Plot area">
+      <div class="thumb-label">Area: 679.2m<sup>2</sup></div>
+    </a>
+  </div>
+
+  <!-- Garden -->
+  <div class="section-bar">South-facing back garden</div>
+  <div class="thumb-grid">
+    <a href="#" onclick="openLb('bg01.jpg'); return false;"><img src="bg01.jpg" alt="Garden"><div class="thumb-label"></div></a>
+    <a href="#" onclick="openLb('bg02.jpg'); return false;"><img src="bg02.jpg" alt="Garden"><div class="thumb-label"></div></a>
+    <a href="#" onclick="openLb('bg03.jpg'); return false;"><img src="bg03.jpg" alt="Garden"><div class="thumb-label"></div></a>
+    <a href="#" onclick="openLb('bg04.jpg'); return false;"><img src="bg04.jpg" alt="Garden"><div class="thumb-label"></div></a>
+    <a href="#" onclick="openLb('bg05.jpg'); return false;"><img src="bg05.jpg" alt="Garden"><div class="thumb-label"></div></a>
+    <a href="#" onclick="openLb('bg06.jpg'); return false;"><img src="bg06.jpg" alt="Garden"><div class="thumb-label"></div></a>
+    <a href="#" onclick="openLb('bg07.jpg'); return false;"><img src="bg07.jpg" alt="Garden"><div class="thumb-label"></div></a>
+    <a href="#" onclick="openLb('bg08.jpg'); return false;"><img src="bg08.jpg" alt="Garden"><div class="thumb-label"></div></a>
+  </div>
+
+  <!-- Lounge -->
+  <div class="section-bar">Lounge</div>
+  <div class="thumb-grid">
+    <a href="#" onclick="openLb('lounge01.jpg'); return false;"><img src="lounge01.jpg" alt="Lounge"><div class="thumb-label"></div></a>
+    <a href="#" onclick="openLb('lounge02.jpg'); return false;"><img src="lounge02.jpg" alt="Lounge"><div class="thumb-label"></div></a>
+    <a href="#" onclick="openLb('lounge03.jpg'); return false;"><img src="lounge03.jpg" alt="Lounge"><div class="thumb-label"></div></a>
+  </div>
+
+  <!-- Full size detail cards (scrolled to from lightbox or links) -->
+  <div id="h2" class="card">
+    <img src="h2.jpg" alt="House from front">
+    <h2>House from front</h2>
+    <p>Grass grids rated to take vehicles up to 20 tonnes without damaging the lawn.</p>
+  </div>
+  <div id="h4" class="card">
+    <img src="h4.jpg" alt="House from side">
+    <h2>House from the side</h2>
+    <p>Large driveway.</p>
+  </div>
+  <div id="h3" class="card">
+    <img src="h3.jpg" alt="House from rear">
+    <h2>House from rear</h2>
+    <p>South-facing garden.</p>
+  </div>
+  <div id="ge1" class="card">
+    <img src="GE1.jpg" alt="Aerial view">
+    <h2>Aerial view</h2>
+  </div>
+  <div id="ge2" class="card">
+    <img src="GE2.jpg" alt="Plot dimensions">
+    <h2>Plot dimensions</h2>
+    <p>Area: 679.2m<sup>2</sup> &bull; Perimeter: 114.85m</p>
+  </div>
+
+  <!-- Lightbox overlay -->
+  <div class="lightbox" id="lightbox">
+    <button class="lb-close" onclick="closeLb()">&#10005; Close photo</button>
+    <div class="lb-hint">Tap the photo or press Esc to close</div>
+    <img id="lb-img" src="" onclick="closeLb()" alt="Full size photo">
+  </div>
+
+  <button id="topBtn" onclick="goTop()">&#11014; Top</button>
+  <button id="bottomBtn" onclick="goBottom()">&#11015; Down</button>
+
+<script>
+function openLb(src) {
+  document.getElementById('lb-img').src = src;
+  document.getElementById('lightbox').classList.add('active');
+}
+function closeLb() {
+  document.getElementById('lightbox').classList.remove('active');
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeLb();
+});
+function goTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function goBottom() {
+  window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
