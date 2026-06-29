@@ -2,14 +2,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>27 Glenholme Rd, Farsley, LS285BY £675,000</title>
 <style>
-body { font-family: Arial; background:#f0f7f0; margin-left:10%; margin-right:10%; margin-top:0px; color:#000; padding-bottom: 120px; }
+body { font-family: Arial; background:#f0f7f0; margin:0px; padding: 0 5%; color:#000; padding-bottom: 120px; }
 .header { background:#ffffff; color:#000000; padding:10px; text-align:center; }
 .bannerx { background:#34c23b; color:#000000; padding:0px; text-align:center; }
 
-.gallery{display:grid; grid-template-columns:2fr 1fr; gap:2px; margin:2px; }
-.gallery-main img{width:100%;left:0px;height:420px;object-fit:cover;cursor:pointer;border-radius: 2px;}
+.gallery{display:grid; grid-template-columns:2fr 1fr; gap:2px; margin:10px auto; max-width:1200px;background: #fff }
+.gallery-main img{width:100%;height:420px;object-fit:cover;cursor:pointer;border-radius: 2px;display:block;}
 .gallery-side{display:grid;grid-template-rows:1fr 1fr;gap:2px;}
-.gallery-side img{width:100%;left:0px;height:207px;object-fit:cover;cursor:pointer;border-radius: 2px;}
+.gallery-side img{width:100%;height:207px;object-fit:cover;cursor:pointer;border-radius: 2px;display:block;}
 .gallery img{border-radius:2px;}
 .galleryControls{display:flex;justify-content:center;align-items:center;gap:10px;margin:2px;}
 .galleryControls button{width:50px;font-size:26px;}
@@ -23,45 +23,21 @@ p { margin:5px 0; }
 #topBtn { bottom: 110px; }
 #bottomBtn { bottom: 60px; } 
 
-#lightbox {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.9);
-  z-index: 1000;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+#lightbox {  display: none;  position: fixed;  inset: 0;  background: rgba(0,0,0,0.9);  z-index: 1000;  flex-direction: column;  align-items: center;  justify-content: center;}
 #lightbox.active { display: flex; }
-#lightbox-close {
-  color: white;
-  background: #2e7d32;
-  border-radius: 6px;
-  padding: 10px 24px;
-  font-size: 18px;
-  cursor: pointer;
-  margin-bottom: 12px;
-  user-select: none;
-}
-#lightbox-img {
-  max-width: 95vw;
-  max-height: 80vh;
-  object-fit: contain;
-  border-radius: 2px;
-  cursor: pointer;
-}
+#lightbox-close {  color: white;  background: #2e7d32;  border-radius: 6px;  padding: 10px 24px;  font-size: 18px;  cursor: pointer;  margin-bottom: 12px;  user-select: none;}
+#lightbox-img {  max-width: 95vw;  max-height: 80vh;  object-fit: contain;  border-radius: 2px;  cursor: pointer;}
 
 /* ==================== RESPONSIVE ==================== */
 @media (max-width: 768px) {
+  body {   padding: 0 3%;   /* Less padding on mobile */  }
   .gallery {
     grid-template-columns: 1fr;   /* Stack everything vertically */
+    margin: 5px auto;
   }
-  
   .gallery-side {
-    display: none;   /* Hide side images on mobile (exactly like Rightmove) */
+    display: none;   /* Hide side images on mobile*/
   }
-  
   .gallery-main img {
     height: auto;    /* Let it adjust naturally on phone */
     max-height: 55vh; /* Optional: prevent it from being too tall */
@@ -70,14 +46,9 @@ p { margin:5px 0; }
 
 /* Optional: If you want to show the side images below on mobile instead of hiding them */
 @media (max-width: 768px) {
-  /* .gallery-side {
-    display: grid;
-    grid-template-columns: 1fr 1fr;   /* side-by-side below main */
-    grid-template-rows: auto;
-  }
-  .gallery-side img {
-    height: 180px;
-  } */
+  .gallery-side {    display: grid;    grid-template-columns: 1fr 1fr;   /* side-by-side below main */
+    grid-template-rows: auto;  }
+  .gallery-side img {    height: 180px;  } 
 }
 </style>
 </head> 
