@@ -65,6 +65,17 @@ p { margin:5px 0; }
   </div>
  <p>Note: All area & perimeter figures have been taken from Google earth.</p>
 
+<div class="bannerx"> <h2>House picture Gallery</h2> </div>
+<div class="gallery">
+    <div class="gallery-main"> <img id="hpicMain" src="bg01.jpg" onclick="openLightbox(hpicPhotos[hpicCurrent])"> </div>
+    <div class="gallery-side"> 
+      <img id="hpicSide1" src="bg02.jpg" onclick="openLightbox(hpicPhotos[(hpicCurrent+1)%hpicPhotos.length])">
+      <img id="hpicSide2" src="bg03.jpg" onclick="openLightbox(hpicPhotos[(hpicCurrent+2)%hpicPhotos.length])">
+    </div>
+</div>
+<div class="galleryControls"> <button onclick="hpicPrevious()">❮</button> <span id="hpicCounter"></span> <button onclick="hpicNext()">❯</button> </div>
+
+  
   <div class="bannerx"> <h2>House</h2></div>
   <div class="top-grid">
    <a onclick="openLightbox('h2.jpg')"><img src="h2.jpg"><p>Front</p></a>
@@ -80,16 +91,7 @@ p { margin:5px 0; }
    <a onclick="openLightbox('GE2.jpg')"><img src="GE2.jpg"><p>Area:679.2m<sup>2</sup>, Perimeter: 114.85m</p></a>
   </div>
 
-  <div class="bannerx"> <h2>South facing back garden</h2> </div>
 
-<div class="gallery">
-    <div class="gallery-main"> <img id="hpicMain" src="bg01.jpg" onclick="openLightbox(hpicPhotos[hpicCurrent])"> </div>
-    <div class="gallery-side"> 
-      <img id="hpicSide1" src="bg02.jpg" onclick="openLightbox(hpicPhotos[(hpicCurrent+1)%hpicPhotos.length])">
-      <img id="hpicSide2" src="bg03.jpg" onclick="openLightbox(hpicPhotos[(hpicCurrent+2)%hpicPhotos.length])">
-    </div>
-</div>
-<div class="galleryControls"> <button onclick="hpicPrevious()">❮</button> <span id="hpicCounter"></span> <button onclick="hpicNext()">❯</button> </div>
 
 <p>
 &nbsp;&nbsp;Large south garden 300.7m², perimeter 72.73m.
