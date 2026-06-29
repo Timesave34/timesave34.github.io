@@ -9,13 +9,8 @@ body { font-family: Arial; background:#f0f7f0; margin:0; color:#000; padding-bot
 .top-grid img { width: 100%; border-radius: 1px; }
 .top-grid a { text-align:center; text-decoration:none; color:#000; }
 .card { background:#DAE8DA; margin:15px; padding:15px; border-radius:10px; text-align:center; }
-.soldout-text {color: red; font-weight: bold;}
 img { width:100%; max-width: 400px; border-radius:2px; display: block; margin: auto; }
 button { width:100%; padding:10px; margin-top:10px; background:#2e7d32; color:#fff; border:none; border-radius:6px; }
-.qty { display:flex; align-items:center; justify-content:center; gap:10px; margin-top:10px; }
-.qty button { width:40px; }
-.cart { background:#fff; margin:15px; padding:15px; border-radius:10px; }
-.toast { position:fixed; bottom:20px; left:50%; transform:translateX(-50%); background:#2e7d32; color:#fff; padding:10px 15px; border-radius:8px; display:none; }
 p { margin:5px 0; }
 
 #topBtn, #bottomBtn {position: fixed; right: 5px; width: 20%; max-width: 45px; padding: 2px; border: none; border-radius: 4px; background: #2e7d32; color: white; cursor: pointer; }
@@ -125,17 +120,6 @@ p { margin:5px 0; }
 <p>????</p>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
 <p><b>House hidden storage</p>
   <div class="bannerx"> <h2>Attic</h2></div>
   <div class="top-grid">
@@ -170,101 +154,7 @@ p { margin:5px 0; }
 </div>
   
 <script>
-  
-var cart = {};
 
-var products = {
-  'gerbera': 4,
-  'lupins': 5,
-  'petunias': 3,
-  'cosmos': 3,
-  'acre': 40,
-  'baytree': 25,
-  'blackbamboo1': 30,
-  'blackbamboo2': 25,
-  'blackbamboo3': 25,
-  'lilac': 25
-};
-
-var soldOut = ['acre'];
-
-function showToast(msg) {
-  var t = document.getElementById('toast');
-  t.textContent = msg;
-  t.style.display = 'block';
-  setTimeout(function(){ t.style.display = 'none'; }, 2000);
-}
-
-
-function changeQty(item, change) {
-
-  if (soldOut.includes(item)) {
-    showToast(item + ' is sold out');
-    return;
-  }
-
-  if (!cart[item]) cart[item] = 0;
-  cart[item] += change;
-  if (cart[item] < 0) cart[item] = 0;
-
-  var el = document.getElementById('qty-' + item);
-  if (el) el.textContent = cart[item];
-
-  updateCart();
-
-  if (change > 0) showToast(item + ' added');
-}
-
-function updateCart() {
-  var list = document.getElementById('cartList');
-  list.innerHTML = '';
-
-  for (var item in cart) {
-    if (cart[item] > 0) {
-      var li = document.createElement('li');
-      li.textContent = item + ' x ' + cart[item];
-      list.appendChild(li);
-    }
-  }
-}
-
-function sendOrder() {
-  var hasItems = false;
-  var body = "Hi, I'd like to order:\n\n";
-  var total = 0;
-
-  for (var item in cart) {
-    if (cart[item] > 0) {
-      hasItems = true;
-      body += item + ' x ' + cart[item] + ' - GBP ' + (products[item] * cart[item]) + "\n";
-      total += products[item] * cart[item];
-    }
-  }
-
-  if (!hasItems) {
-    alert('Your cart is empty');
-    return;
-  }
-
-  body += "\nTotal: GBP " + total;
-
-  var email = 'ianbeeton@hotmail.co.uk';
-  var subject = 'Plant Order';
-
-  var link = 'mailto:' + email +
-    '?subject=' + encodeURIComponent(subject) +
-    '&body=' + encodeURIComponent(body);
-
-  window.location.href = link;
-}
-
-  function goTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-function goBottom() {
-  window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-}
 
 </script>
 
