@@ -75,7 +75,7 @@ p { margin:5px 0; }
       <img id="hpicSide2" src="bg03.jpg" onclick="openLightbox(hpicPhotos[(hpicCurrent+2)%hpicPhotos.length])">
     </div>
 </div>
-<div class="galleryControls"> <button onclick="hpicPrevious()">❮</button> <span id="hpicCounter"></span> <button onclick="hpicNext()">❯</button> </div>
+<div class="galleryControls"> <button onclick="hpicManualPrevious()">❮</button> <span id="hpicCounter"></span> <button onclick="hpicManualNext()">❯</button> </div>
 
   <h2>Key features</h2>
   <h3>&#x2022; 4 BEDROOMS</h3><h3>&#x2022; LARGE SOUTH FACING PLOT</h3>
@@ -335,21 +335,17 @@ const hpicPhotos=[
 ];
 
 let hpicCurrent=0;
+let hpicAutoPlay;
 
 function hpicRefresh(){
-
 document.getElementById("hpicMain").src=
 hpicPhotos[hpicCurrent];
-
 document.getElementById("hpicSide1").src=
 hpicPhotos[(hpicCurrent+1)%hpicPhotos.length];
-
 document.getElementById("hpicSide2").src=
 hpicPhotos[(hpicCurrent+2)%hpicPhotos.length];
-
 document.getElementById("hpicCounter").innerHTML=
 (hpicCurrent+1)+" / "+hpicPhotos.length;
-
 }
 
 function hpicNext(){
@@ -364,7 +360,21 @@ function hpicPrevious(){
     hpicCurrent=hpicPhotos.length-1; 
     hpicRefresh(); }
 
+function hpicManualNext(){
+  hpicNext();
+  hpicResetAutoPlay();
+}
+function hpicManualPrevious(){
+  hpicPrevious();
+  hpicResetAutoPlay();
+}
+function hpicResetAutoPlay(){
+  clearInterval(hpicAutoPlay);
+  hpicAutoPlay = setInterval(hpicNext, 4000);
+}
+
 hpicRefresh();
+hpicResetAutoPlay();
   
 function goTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
