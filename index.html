@@ -124,14 +124,16 @@ p { margin:5px 0; }
 <div class="galleryControls"> <button onclick="diningManualPrevious()">❮</button> <span id="diningCounter"></span> <button onclick="diningManualNext()">❯</button> </div>
 <p style="padding-left:2em;">Large dining room with french doors opening onto lounge.</p>
 
-  <div class="bannerx"> <h2>Kitchen</h2></div>
-  <div class="top-grid">
-   <a onclick="openLightbox('k1.jpg')"><img src="k1.jpg"><p></p></a>
-   <a onclick="openLightbox('k2.jpg')"><img src="k2.jpg"><p></p></a>
-   <a onclick="openLightbox('k3.jpg')"><img src="k3.jpg"><p></p></a>
-   <a onclick="openLightbox('k4.jpg')"><img src="k4.jpg"><p></p></a>
-  </div>
-  <p style="padding-left:2em;">Double steam oven with integrated microwave, SMEG dishwasher, large Haier washing machine, Samsung fridge freezer, large 4 burner gas hob.</p>
+<div class="bannerx"> <h2>Kitchen</h2></div>
+<div class="gallery">
+    <div class="gallery-main"> <img id="kitchenMain" src="k1.jpg" onclick="openLightbox(kitchenPhotos[kitchenCurrent])"> </div>
+    <div class="gallery-side"> 
+      <img id="kitchenSide1" src="k2.jpg" onclick="openLightbox(kitchenPhotos[(kitchenCurrent+1)%kitchenPhotos.length])">
+      <img id="kitchenSide2" src="k3.jpg" onclick="openLightbox(kitchenPhotos[(kitchenCurrent+2)%kitchenPhotos.length])">
+    </div>
+</div>
+<div class="galleryControls"> <button onclick="kitchenManualPrevious()">❮</button> <span id="kitchenCounter"></span> <button onclick="kitchenManualNext()">❯</button> </div>
+ <p style="padding-left:2em;">Double steam oven with integrated microwave, SMEG dishwasher, large Haier washing machine, Samsung fridge freezer, large 4 burner gas hob.</p>
 
   <div class="bannerx"> <h2>Bathroom</h2></div>
   <div class="top-grid">
@@ -449,6 +451,43 @@ function diningResetAutoPlay(){
 diningRefresh();
 diningResetAutoPlay();
 /* ==================== end of dining room ==================== */
+const kitchenPhotos=[
+  "k1.jpg",
+  "k2.jpg",
+  "k3.jpg",
+  "k4.jpg"
+];
+
+let kitchenCurrent=0;
+let kitchenAutoPlay;
+
+function kitchenRefresh(){
+  document.getElementById("kitchenMain").src=kitchenPhotos[kitchenCurrent];
+  document.getElementById("kitchenSide1").src=kitchenPhotos[(kitchenCurrent+1)%kitchenPhotos.length];
+  document.getElementById("kitchenSide2").src=kitchenPhotos[(kitchenCurrent+2)%kitchenPhotos.length];
+  document.getElementById("kitchenCounter").innerHTML=(kitchenCurrent+1)+" / "+kitchenPhotos.length;
+}
+function kitchenNext(){
+  kitchenCurrent++;
+  if(kitchenCurrent>=kitchenPhotos.length) kitchenCurrent=0;
+  kitchenRefresh();
+}
+function kitchenPrevious(){
+  kitchenCurrent--;
+  if(kitchenCurrent<0) kitchenCurrent=kitchenPhotos.length-1;
+  kitchenRefresh();
+}
+function kitchenManualNext(){ kitchenNext(); kitchenResetAutoPlay(); }
+function kitchenManualPrevious(){ kitchenPrevious(); kitchenResetAutoPlay(); }
+function kitchenResetAutoPlay(){
+  clearInterval(kitchenAutoPlay);
+  kitchenAutoPlay = setInterval(kitchenNext, 4000);
+}
+
+kitchenRefresh();
+kitchenResetAutoPlay();
+/* ==================== end of kitchen ==================== */
+  
 function goTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
