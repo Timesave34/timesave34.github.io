@@ -111,10 +111,10 @@ p { margin:5px 0; }
 
 <div class="bannerx"> <h2></h2> 
 <div class="gallery">
-    <div class="gallery-main"> <img id="hpicMain" src="h1.jpg" onclick="openLightbox(hpicPhotos[hpicCurrent])"> </div>
+    <div class="gallery-main"> <img id="hpicMain" src="h2.jpg" onclick="openLightbox(hpicPhotos[hpicCurrent])"> </div>
     <div class="gallery-side"> 
       <img id="hpicSide1" src="bg04.jpg" onclick="openLightbox(hpicPhotos[(hpicCurrent+1)%hpicPhotos.length])">
-      <img id="hpicSide2" src="bg08.jpg" onclick="openLightbox(hpicPhotos[(hpicCurrent+2)%hpicPhotos.length])">
+      <img id="hpicSide2" src="h3.jpg" onclick="openLightbox(hpicPhotos[(hpicCurrent+2)%hpicPhotos.length])">
     </div>
 </div>
 <div class="galleryControls"> <button onclick="hpicManualPrevious()">❮</button> <span id="hpicCounter"></span> <button onclick="hpicManualNext()">❯</button> </div>
@@ -350,21 +350,18 @@ document.addEventListener('keydown', e => {
 });
 
 const hpicPhotos=[
-"h1.jpg",
-"bg04.jpg",
 "h2.jpg",
+"bg04.jpg",
+"h3.jpg",
 "bg01.jpg",
 "h4.jpg",
 "bg02.jpg",
-"bg01.jpg",
 "bg08.jpg",
-"bg01.jpg",
-"bg02.jpg",
 "bg03.jpg",
 "bg05.jpg",
 "bg06.jpg",
 "bg07.jpg",
-"h3.jpg",
+
 "lounge01.jpg",
 "lounge02.jpg",
 "lounge03.jpg",
