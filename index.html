@@ -137,13 +137,16 @@ p { margin:5px 0; }
 <div class="galleryControls"> <button onclick="kitchenManualPrevious()">❮</button> <span id="kitchenCounter"></span> <button onclick="kitchenManualNext()">❯</button> </div>
  <p style="padding-left:2em;">Double steam oven with integrated microwave, SMEG dishwasher, large Haier washing machine, Samsung fridge freezer, large 4 burner gas hob.</p>
 
-  <div class="bannerx"> <h2>Bathroom</h2></div>
-  <div class="top-grid">
-   <a onclick="openLightbox('br01.jpg')"><img src="br01.jpg"><p></p></a>
-   <a onclick="openLightbox('br01.jpg')"><img src="br02.jpg"><p></p></a>
-   <a onclick="openLightbox('br01.jpg')"><img src="br03.jpg"><p></p></a>
-  </div>
-  <p style="padding-left:2em;">Large jacuzzi bath, toilet & sink with plenty of storage & a large towel rail radiator.</p>
+<div class="bannerx"> <h2>Bathroom</h2></div>
+<div class="gallery">
+    <div class="gallery-main"> <img id="bathroomMain" src="br01.jpg" onclick="openLightbox(bathroomPhotos[bathroomCurrent])"> </div>
+    <div class="gallery-side"> 
+      <img id="bathroomSide1" src="br02.jpg" onclick="openLightbox(bathroomPhotos[(bathroomCurrent+1)%bathroomPhotos.length])">
+      <img id="bathroomSide2" src="br03.jpg" onclick="openLightbox(bathroomPhotos[(bathroomCurrent+2)%bathroomPhotos.length])">
+    </div>
+</div>
+<div class="galleryControls"> <button onclick="bathroomManualPrevious()">❮</button> <span id="bathroomCounter"></span> <button onclick="bathroomManualNext()">❯</button> </div>
+<p style="padding-left:2em;">Large jacuzzi bath, toilet & sink with plenty of storage & a large towel rail radiator.</p>
 
   <div class="bannerx"> <h2>Bedroom 1</h2></div>
   <div class="top-grid">
@@ -529,6 +532,42 @@ function gardenResetAutoPlay(){
 gardenRefresh();
 gardenResetAutoPlay();
 /* ==================== end of kitchen ==================== */
+const bathroomPhotos=[
+  "br01.jpg",
+  "br02.jpg",
+  "br03.jpg"
+];
+
+let bathroomCurrent=0;
+let bathroomAutoPlay;
+
+function bathroomRefresh(){
+  document.getElementById("bathroomMain").src=bathroomPhotos[bathroomCurrent];
+  document.getElementById("bathroomSide1").src=bathroomPhotos[(bathroomCurrent+1)%bathroomPhotos.length];
+  document.getElementById("bathroomSide2").src=bathroomPhotos[(bathroomCurrent+2)%bathroomPhotos.length];
+  document.getElementById("bathroomCounter").innerHTML=(bathroomCurrent+1)+" / "+bathroomPhotos.length;
+}
+function bathroomNext(){
+  bathroomCurrent++;
+  if(bathroomCurrent>=bathroomPhotos.length) bathroomCurrent=0;
+  bathroomRefresh();
+}
+function bathroomPrevious(){
+  bathroomCurrent--;
+  if(bathroomCurrent<0) bathroomCurrent=bathroomPhotos.length-1;
+  bathroomRefresh();
+}
+function bathroomManualNext(){ bathroomNext(); bathroomResetAutoPlay(); }
+function bathroomManualPrevious(){ bathroomPrevious(); bathroomResetAutoPlay(); }
+function bathroomResetAutoPlay(){
+  clearInterval(bathroomAutoPlay);
+  bathroomAutoPlay = setInterval(bathroomNext, 5500);
+}
+
+bathroomRefresh();
+bathroomResetAutoPlay();
+/* ==================== end of bathroom ==================== */
+  
 function goTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
