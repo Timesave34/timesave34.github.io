@@ -190,22 +190,21 @@ p { margin:5px 0; }
 </div>
 <div id="h3" class="card">
 <img src="h3.jpg">
-<h2>House from rear</h2>
+
+<div class="bannerx"> <h2>Back Garden</h2></div>
 <p>South facing garden so gets the sun all day.</p>
-    <div class="top-grid">
-   <a onclick="openLightbox('bg01.jpg')"><img src="bg01.jpg"><p></p></a>
-   <a onclick="openLightbox('bg02.jpg')"><img src="bg02.jpg"><p></p></a>
-   <a onclick="openLightbox('bg03.jpg')"><img src="bg03.jpg"><p></p></a>
-   <a onclick="openLightbox('bg04.jpg')"><img src="bg04.jpg"><p></p></a>
-   <a onclick="openLightbox('bg05.jpg')"><img src="bg05.jpg"><p>Side sheltered patio</p></a>
-   <a onclick="openLightbox('bg06.jpg')"><img src="bg06.jpg"><p></p></a>
-    <a onclick="openLightbox('bg07.jpg')"><img src="bg07.jpg"><p></p></a>
-   <a onclick="openLightbox('bg08.jpg')"><img src="bg08.jpg"><p></p></a>
-  </div>
+<div class="gallery">
+    <div class="gallery-main"> <img id="gardenMain" src="bg01.jpg" onclick="openLightbox(gardenPhotos[gardenCurrent])"> </div>
+    <div class="gallery-side"> 
+      <img id="gardenSide1" src="bg02.jpg" onclick="openLightbox(gardenPhotos[(gardenCurrent+1)%gardenPhotos.length])">
+      <img id="gardenSide2" src="bg03.jpg" onclick="openLightbox(gardenPhotos[(gardenCurrent+2)%gardenPhotos.length])">
+    </div>
 </div>
+<div class="galleryControls"> <button onclick="gardenManualPrevious()">❮</button> <span id="gardenCounter"></span> <button onclick="gardenManualNext()">❯</button> </div>
 <p style="padding-left:2em;">Front garden 65.67m<sup>2</sup> with 2 raised beds made from oak railway sleepers. Front lawn 48.19m<sup>2</sup> using Grass grids that allow vehicles weighing up to 20 tonnes to park without damaging the lawn.</p>
 <p style="padding-left:2em;">Rear garden 300.7m<sup>2</sup> with fruit trees, greenhouse & lawn 166.8m<sup>2</sup>.Large patio 52.15m<sup>2</sup></p>
 
+    
   <div class="bannerx"> <h2>Garage</h2></div>
   <div class="top-grid">
    <a onclick="openLightbox('garage1.jpg')"><img src="garage1.jpg"><p>Garage insulated & clad using IPSL panels. Contains White Knight tumble dryer.</p></a>
@@ -481,13 +480,52 @@ function kitchenManualNext(){ kitchenNext(); kitchenResetAutoPlay(); }
 function kitchenManualPrevious(){ kitchenPrevious(); kitchenResetAutoPlay(); }
 function kitchenResetAutoPlay(){
   clearInterval(kitchenAutoPlay);
-  kitchenAutoPlay = setInterval(kitchenNext, 4000);
+  kitchenAutoPlay = setInterval(kitchenNext, 5500);
 }
 
 kitchenRefresh();
 kitchenResetAutoPlay();
 /* ==================== end of kitchen ==================== */
-  
+const gardenPhotos=[
+  "bg01.jpg",
+  "bg02.jpg",
+  "bg03.jpg",
+  "bg04.jpg",
+  "bg05.jpg",
+  "bg06.jpg",
+  "bg07.jpg",
+  "bg08.jpg"
+];
+
+let gardenCurrent=0;
+let gardenAutoPlay;
+
+function gardenRefresh(){
+  document.getElementById("gardenMain").src=gardenPhotos[gardenCurrent];
+  document.getElementById("gardenSide1").src=gardenPhotos[(gardenCurrent+1)%gardenPhotos.length];
+  document.getElementById("gardenSide2").src=gardenPhotos[(gardenCurrent+2)%gardenPhotos.length];
+  document.getElementById("gardenCounter").innerHTML=(gardenCurrent+1)+" / "+gardenPhotos.length;
+}
+function gardenNext(){
+  gardenCurrent++;
+  if(gardenCurrent>=gardenPhotos.length) gardenCurrent=0;
+  gardenRefresh();
+}
+function gardenPrevious(){
+  gardenCurrent--;
+  if(gardenCurrent<0) gardenCurrent=gardenPhotos.length-1;
+  gardenRefresh();
+}
+function gardenManualNext(){ gardenNext(); gardenResetAutoPlay(); }
+function gardenManualPrevious(){ gardenPrevious(); gardenResetAutoPlay(); }
+function gardenResetAutoPlay(){
+  clearInterval(gardenAutoPlay);
+  gardenAutoPlay = setInterval(gardenNext, 5500);
+}
+
+gardenRefresh();
+gardenResetAutoPlay();
+/* ==================== end of kitchen ==================== */
 function goTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
