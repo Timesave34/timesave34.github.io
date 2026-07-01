@@ -55,6 +55,31 @@ p { margin:5px 0; }
     grid-template-rows: auto;  }
   .gallery-side img {    height: 180px;  } 
 }
+
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;  /* 2 per row on desktop */
+  gap: 6px;
+  padding: 10px 14px;
+  background: #e8f5e9;
+  border-radius: 8px;
+  margin: 10px;
+}
+.feature {
+  background: #fff;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  border-left: 4px solid #2e7d32;
+}
+
+/* 1 per row on mobile */
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
 </style>
   <script data-goatcounter="https://timesave34.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
@@ -87,6 +112,19 @@ p { margin:5px 0; }
   <h3>&#x2022; QUIET CUL-DE-SAC</h3><h3> &#x2022; 2 BATHROOMS</h3>
   <h3>&#x2022; LARGE LOUNGE WITH LOG BURNER</h3><h3> &#x2022; 4 DOUBLE BEDROOMS</h3>
   <h3>&#x2022; OFF-STREET PARKING FOR AT LEAST 4 CARS WITH SECURE GARAGE</h3>
+  <h2 style="padding:10px 14px;">Key features</h2>
+<h2>Key features</h2>
+<div class="features-grid">
+  <div class="feature">&#x2022; 4 double bedrooms</div>
+  <div class="feature">&#x2022; Large south-facing plot (679.2m<sup>2</sup>)</div>
+  <div class="feature">&#x2022; Large garden</div>
+  <div class="feature">&#x2022; Sought after Farsley location</div>
+  <div class="feature">&#x2022; Quiet cul-de-sac</div>
+  <div class="feature">&#x2022; 2 bathrooms</div>
+  <div class="feature">&#x2022; Large lounge with log burner</div>
+  <div class="feature">&#x2022; Off-street parking for 4+ cars</div>
+  <div class="feature">&#x2022; Secure garage</div>
+</div>
   
   <div class="bannerx"> <h2>House</h2></div>
   
