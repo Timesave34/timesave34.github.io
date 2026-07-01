@@ -101,14 +101,6 @@ p { margin:5px 0; }
   <p style="padding-left:2em;">Large south facing garden 300.7m<sup>2</sup>, perimiter 72.73m. Two original eating apple trees from when the street was an orchard. One Morillo cherry tree & one Victoria plum tree. 
     An 8ft x 6ft greenhouse & an 8ft x 6ft storage shed.</p>
   
-  <div class="bannerx"> <h2>Lounge</h2></div>
-  <div class="top-grid">
-   <a onclick="openLightbox('lounge01.jpg')"><img src="lounge01.jpg"><p></p></a>
-   <a onclick="openLightbox('lounge02.jpg')"><img src="lounge02.jpg"><p></p></a>
-   <a onclick="openLightbox('lounge03.jpg')"><img src="lounge03.jpg"><p></p></a>
-  </div>
-  <p style="padding-left:2em;">South facing. Solid oak floor 20mm thick. Large aluminium sliding patio door leading to rear patio & garden.</p>
-    <p style="padding-left:2em;">Burley Fireball Brampton 8kw Log Burner (Most efficient wood burning stove in the world).</p>
 <div class="bannerx"> <h2>Lounge gallery</h2></div>
 <div class="gallery">
     <div class="gallery-main"> <img id="loungeMain" src="lounge01.jpg" onclick="openLightbox(loungePhotos[loungeCurrent])"> </div>
@@ -121,14 +113,16 @@ p { margin:5px 0; }
 <p style="padding-left:2em;">South facing. Solid oak floor 20mm thick. Large aluminium sliding patio door leading to rear patio & garden.</p>
 <p style="padding-left:2em;">Burley Fireball Brampton 8kw Log Burner (Most efficient wood burning stove in the world).</p>
 
-  <div class="bannerx"> <h2>Dining Room</h2></div>
-  <div class="top-grid">
-   <a onclick="openLightbox('dr01.jpg')"><img src="dr01.jpg"><p></p></a>
-   <a onclick="openLightbox('dr02.jpg')"><img src="dr02.jpg"><p></p></a>
-   <a onclick="openLightbox('dr03.jpg')"><img src="dr03.jpg"><p></p></a>
-   <a onclick="openLightbox('dr04.jpg')"><img src="dr04.jpg"><p></p></a>
-  </div>
-  <p style="padding-left:2em;">Large dining room with french doors opening onto lounge.</p>
+<div class="bannerx"> <h2>Dining Room</h2></div>
+<div class="gallery">
+    <div class="gallery-main"> <img id="diningMain" src="dr01.jpg" onclick="openLightbox(diningPhotos[diningCurrent])"> </div>
+    <div class="gallery-side"> 
+      <img id="diningSide1" src="dr02.jpg" onclick="openLightbox(diningPhotos[(diningCurrent+1)%diningPhotos.length])">
+      <img id="diningSide2" src="dr03.jpg" onclick="openLightbox(diningPhotos[(diningCurrent+2)%diningPhotos.length])">
+    </div>
+</div>
+<div class="galleryControls"> <button onclick="diningManualPrevious()">❮</button> <span id="diningCounter"></span> <button onclick="diningManualNext()">❯</button> </div>
+<p style="padding-left:2em;">Large dining room with french doors opening onto lounge.</p>
 
   <div class="bannerx"> <h2>Kitchen</h2></div>
   <div class="top-grid">
@@ -412,13 +406,49 @@ function loungeManualNext(){ loungeNext(); loungeResetAutoPlay(); }
 function loungeManualPrevious(){ loungePrevious(); loungeResetAutoPlay(); }
 function loungeResetAutoPlay(){
   clearInterval(loungeAutoPlay);
-  loungeAutoPlay = setInterval(loungeNext, 4000);
+  loungeAutoPlay = setInterval(loungeNext, 5500);
 }
 
 loungeRefresh();
 loungeResetAutoPlay();
 
 /* ==================== end of lounge ==================== */
+const diningPhotos=[
+  "dr01.jpg",
+  "dr02.jpg",
+  "dr03.jpg",
+  "dr04.jpg"
+];
+
+let diningCurrent=0;
+let diningAutoPlay;
+
+function diningRefresh(){
+  document.getElementById("diningMain").src=diningPhotos[diningCurrent];
+  document.getElementById("diningSide1").src=diningPhotos[(diningCurrent+1)%diningPhotos.length];
+  document.getElementById("diningSide2").src=diningPhotos[(diningCurrent+2)%diningPhotos.length];
+  document.getElementById("diningCounter").innerHTML=(diningCurrent+1)+" / "+diningPhotos.length;
+}
+function diningNext(){
+  diningCurrent++;
+  if(diningCurrent>=diningPhotos.length) diningCurrent=0;
+  diningRefresh();
+}
+function diningPrevious(){
+  diningCurrent--;
+  if(diningCurrent<0) diningCurrent=diningPhotos.length-1;
+  diningRefresh();
+}
+function diningManualNext(){ diningNext(); diningResetAutoPlay(); }
+function diningManualPrevious(){ diningPrevious(); diningResetAutoPlay(); }
+function diningResetAutoPlay(){
+  clearInterval(diningAutoPlay);
+  diningAutoPlay = setInterval(diningNext, 5500);
+}
+
+diningRefresh();
+diningResetAutoPlay();
+/* ==================== end of dining room ==================== */
 function goTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
