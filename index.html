@@ -109,6 +109,17 @@ p { margin:5px 0; }
   </div>
   <p style="padding-left:2em;">South facing. Solid oak floor 20mm thick. Large aluminium sliding patio door leading to rear patio & garden.</p>
     <p style="padding-left:2em;">Burley Fireball Brampton 8kw Log Burner (Most efficient wood burning stove in the world).</p>
+<div class="bannerx"> <h2>Lounge gallery</h2></div>
+<div class="gallery">
+    <div class="gallery-main"> <img id="loungeMain" src="lounge01.jpg" onclick="openLightbox(loungePhotos[loungeCurrent])"> </div>
+    <div class="gallery-side"> 
+      <img id="loungeSide1" src="lounge02.jpg" onclick="openLightbox(loungePhotos[(loungeCurrent+1)%loungePhotos.length])">
+      <img id="loungeSide2" src="lounge03.jpg" onclick="openLightbox(loungePhotos[(loungeCurrent+2)%loungePhotos.length])">
+    </div>
+</div>
+<div class="galleryControls"> <button onclick="loungeManualPrevious()">❮</button> <span id="loungeCounter"></span> <button onclick="loungeManualNext()">❯</button> </div>
+<p style="padding-left:2em;">South facing. Solid oak floor 20mm thick. Large aluminium sliding patio door leading to rear patio & garden.</p>
+<p style="padding-left:2em;">Burley Fireball Brampton 8kw Log Burner (Most efficient wood burning stove in the world).</p>
 
   <div class="bannerx"> <h2>Dining Room</h2></div>
   <div class="top-grid">
@@ -370,7 +381,44 @@ function hpicResetAutoPlay(){
 
 hpicRefresh();
 hpicResetAutoPlay();
-  
+
+/* ==================== lounge ==================== */
+const loungePhotos=[
+  "lounge01.jpg",
+  "lounge02.jpg",
+  "lounge03.jpg"
+];
+
+let loungeCurrent=0;
+let loungeAutoPlay;
+
+function loungeRefresh(){
+  document.getElementById("loungeMain").src=loungePhotos[loungeCurrent];
+  document.getElementById("loungeSide1").src=loungePhotos[(loungeCurrent+1)%loungePhotos.length];
+  document.getElementById("loungeSide2").src=loungePhotos[(loungeCurrent+2)%loungePhotos.length];
+  document.getElementById("loungeCounter").innerHTML=(loungeCurrent+1)+" / "+loungePhotos.length;
+}
+function loungeNext(){
+  loungeCurrent++;
+  if(loungeCurrent>=loungePhotos.length) loungeCurrent=0;
+  loungeRefresh();
+}
+function loungePrevious(){
+  loungeCurrent--;
+  if(loungeCurrent<0) loungeCurrent=loungePhotos.length-1;
+  loungeRefresh();
+}
+function loungeManualNext(){ loungeNext(); loungeResetAutoPlay(); }
+function loungeManualPrevious(){ loungePrevious(); loungeResetAutoPlay(); }
+function loungeResetAutoPlay(){
+  clearInterval(loungeAutoPlay);
+  loungeAutoPlay = setInterval(loungeNext, 4000);
+}
+
+loungeRefresh();
+loungeResetAutoPlay();
+
+/* ==================== end of lounge ==================== */
 function goTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
