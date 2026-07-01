@@ -78,6 +78,22 @@ p { margin:5px 0; }
     grid-template-columns: 1fr;
   }
 }
+
+.prop-video {
+  width: 100%;
+  max-width: 900px;  /* wide on desktop */
+  max-height: 80vh;
+  border-radius: 2px;
+  display: block;
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+  .prop-video {
+    max-width: 100%;  /* full width on phone */
+    max-height: 60vh;
+  }
+}
 </style>
   <script data-goatcounter="https://timesave34.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
@@ -275,7 +291,7 @@ p { margin:5px 0; }
 
 <div id="video" style="background:#DAE8DA;">
 <h2>Lounge 🎬</h2>
-  <video controls poster="lounge01.jpg" width="100%" style="max-width:400px; max-height:80vh; border-radius:2px; display:block; margin:auto;">
+  <video controls poster="lounge01.jpg" class="prop-video">
   <source src="HouseLounge1.mp4" type="video/mp4">
 </video>
 
