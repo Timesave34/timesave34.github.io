@@ -671,9 +671,9 @@ let items4saleCurrent=0;
 let items4saleAutoPlay;
 
 function items4saleRefresh(){
-  document.getElementById("items4saleMain").src=items4sale[items4saleCurrent];
-  document.getElementById("items4saleSide1").src=items4sale[(items4saleCurrent+1)%items4sale.length];
-  document.getElementById("items4saleSide2").src=items4sale[(items4saleCurrent+2)%items4sale.length];
+  document.getElementById("items4saleMain").src=items4salePhotos[items4saleCurrent];
+  document.getElementById("items4saleSide1").src=items4salePhotos[(items4saleCurrent+1)%items4salePhotos.length];
+  document.getElementById("items4saleSide2").src=items4salePhotos[(items4saleCurrent+2)%items4salePhotos.length];
   document.getElementById("items4saleCounter").innerHTML=(items4saleCurrent+1)+" / "+items4salePhotos.length;
 }
 function items4saleNext(){
