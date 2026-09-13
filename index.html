@@ -351,6 +351,18 @@ p { margin:5px 0; }
  <a onclick="openLightbox('SofaChair1.jpg')"><img src="SofaChair1.jpg"><p>M&S ABBEY Brown Leather chair</p></a>
  <a onclick="openLightbox('landing01.jpg')"><img src="landing01.jpg"><p>Landing.</p></a>
 </div>
+
+<div class="bannerx"> <h2>Items for sale</h2></div>
+<div class="gallery">
+    <div class="gallery-main"> <img id="Items4SaleMain" src="lounge01.jpg" onclick="openLightbox(Items4SalePhotos[Items4SaleCurrent])"> </div>
+    <div class="gallery-side"> 
+      <img id="Items4SaleSide1" src="lounge02.jpg" onclick="openLightbox(Items4SalePhotos[(Items4SaleCurrent+1)%Items4SalePhotos.length])">
+      <img id="Items4SaleSide2" src="lounge03.jpg" onclick="openLightboxItems4SalePhotos[(Items4SaleCurrent+2)%Items4SalePhotos.length])">
+    </div>
+</div>
+<div class="galleryControls"> <button onclick="Items4SaleManualPrevious()">❮</button> <span id="Items4SaleCounter"></span> <button onclick="Items4SaleManualNext()">❯</button> </div>
+<p style="padding-left:2em;">The M&S ABBEY leather sofas & chair are lovely items. South facing. Solid oak floor 20mm thick. Large aluminium sliding patio door leading to rear patio & garden.</p>
+<p style="padding-left:2em;">Burley Fireball Brampton 8kw Log Burner (Most efficient wood burning stove in the world).</p>
   
 <!-- Lightbox overlay -->
 <div id="lightbox">
