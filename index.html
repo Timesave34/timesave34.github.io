@@ -351,17 +351,20 @@ p { margin:5px 0; }
  <a onclick="openLightbox('SofaChair11.jpg')"><img src="SofaChair11.jpg"><p>M&S ABBEY Brown Leather chair</p></a>
 </div>
 
+<div id="h3" class="card">
 <div class="bannerx"> <h2>Items for sale</h2></div>
+  <p>Please email timesave34@gmail.com if interested in buying any of the items for sale.</p>
 <div class="gallery">
-    <div class="gallery-main"> <img id="items4saleMain" src="lounge01.jpg" onclick="openLightbox(items4salePhotos[items4saleCurrent])"> </div>
+    <div class="gallery-main"> <img id="items4saleMain" src="Sofa3Seater.jpg" onclick="openLightbox(items4salePhotos[items4saleCurrent])"> </div>
     <div class="gallery-side"> 
-      <img id="items4saleSide1" src="Sofa3Seater.jpg" onclick="openLightbox(items4salePhotos[(items4saleCurrent+1)%items4salePhotos.length])">
-      <img id="items4saleSide2" src="Sofa2Seater.jpg" onclick="openLightboxitems4salePhotos[(items4saleCurrent+2)%items4salePhotos.length])">
+      <img id="items4saleSide1" src="Sofa2Seater.jpg" onclick="openLightbox(items4salePhotos[(items4saleCurrent+1)%items4salePhotos.length])">
+      <img id="items4saleSide2" src="SofaChair11.jpg" onclick="openLightboxitems4salePhotos[(items4saleCurrent+2)%items4salePhotos.length])">
     </div>
 </div>
 <div class="galleryControls"> <button onclick="items4saleManualPrevious()">❮</button> <span id="items4saleCounter"></span> <button onclick="items4saleManualNext()">❯</button> </div>
-<p style="padding-left:2em;">The M&S ABBEY leather sofas & chair are lovely items. South facing. Solid oak floor 20mm thick. Large aluminium sliding patio door leading to rear patio & garden.</p>
-<p style="padding-left:2em;">Burley Fireball Brampton 8kw Log Burner (Most efficient wood burning stove in the world).</p>
+<p style="padding-left:2em;">The M&S ABBEY leather sofas & chair are lovely items.</p>
+</div>
+
   
 <!-- Lightbox overlay -->
 <div id="lightbox">
@@ -687,7 +690,7 @@ function items4saleManualNext(){ items4saleNext(); items4saleResetAutoPlay(); }
 function items4saleManualPrevious(){ items4salePrevious(); items4saleResetAutoPlay(); }
 function items4saleResetAutoPlay(){
   clearInterval(items4saleAutoPlay);
-  items4saleAutoPlay = setInterval(items4saleNext, 5500);
+  items4saleAutoPlay = setInterval(items4saleNext, 4500);
 }
 
 items4saleRefresh();
