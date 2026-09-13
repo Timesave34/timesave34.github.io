@@ -344,6 +344,13 @@ p { margin:5px 0; }
 <p>For more info please contact. Julies Homes, Farsley, 36 Town Street, Farsley, Leeds, LS28 5LD</p>
 <p>Tel: 0113 204 0322 <a href="mailto:info@julieshomes.co.uk?subject=27 Glenholme rd enquiry.">info@julieshomes.co.uk</a></p>
 
+<div class="bannerx"> <h2>Items for sale</h2></div>
+<div class="top-grid">
+ <a onclick="openLightbox('Sofa3Seater.jpg')"><img src="Sofa3Seater.jpg"><p>M&S ABBEY Brown Leather 3 seater sofa</p></a>
+ <a onclick="openLightbox('Sofa2Seater.jpg')"><img src="Sofa2Seater.jpg"><p></p>M&S ABBEY Brown Leather 2 seater sofa</a>
+ <a onclick="openLightbox('Sofa3Seater.jpg')"><img src="Sofa3Seater.jpg"><p>M&S ABBEY Brown Leather chair</p></a>
+ <a onclick="openLightbox('landing01.jpg')"><img src="landing01.jpg"><p>Landing.</p></a>
+</div>
   
 <!-- Lightbox overlay -->
 <div id="lightbox">
@@ -639,6 +646,43 @@ function bathroomResetAutoPlay(){
 bathroomRefresh();
 bathroomResetAutoPlay();
 /* ==================== end of bathroom ==================== */
+
+const items4sale=[
+  "SofaChair1.jpg",
+  "Sofa2Seater.jpg",
+  "Sofa3Seater.jpg",
+  "k4.jpg"
+];
+
+let items4saleCurrent=0;
+let items4saleAutoPlay;
+
+function items4saleRefresh(){
+  document.getElementById("items4saleMain").src=items4sale[items4saleCurrent];
+  document.getElementById("items4saleSide1").src=items4sale[(items4saleCurrent+1)%items4sale.length];
+  document.getElementById("items4saleSide2").src=items4sale[(items4saleCurrent+2)%items4sale.length];
+  document.getElementById("items4saleCounter").innerHTML=(items4saleCurrent+1)+" / "+items4salePhotos.length;
+}
+function items4saleNext(){
+  items4saleCurrent++;
+  if(items4saleCurrent>=items4salePhotos.length) items4saleCurrent=0;
+  items4saleRefresh();
+}
+function items4salePrevious(){
+  items4saleCurrent--;
+  if(items4saleCurrent<0) items4saleCurrent=items4salePhotos.length-1;
+  items4saleRefresh();
+}
+function items4saleManualNext(){ items4saleNext(); items4saleResetAutoPlay(); }
+function items4saleManualPrevious(){ items4salePrevious(); items4saleResetAutoPlay(); }
+function items4saleResetAutoPlay(){
+  clearInterval(items4saleAutoPlay);
+  items4saleAutoPlay = setInterval(items4saleNext, 5500);
+}
+
+items4saleRefresh();
+items4saleResetAutoPlay();
+/* ==================== end of items4sale ==================== */
   
 function goTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
