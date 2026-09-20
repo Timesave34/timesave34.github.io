@@ -106,7 +106,32 @@ p { margin:5px 0; }
 </head> 
   
 <body>
-  <div class="page">
+<div class="page">
+ <div class="header"><h1>Items for sale.</h1></div>
+  <div class="bannerx"> <h2>Marks & Spenser Dark Brown Bronco Leather (ABBEY Range)</h2></div>
+   <div class="top-grid">
+   <a onclick="openLightbox('Sofa3Seater.jpg')"><img src="Sofa3Seater.jpg"><p>M&S ABBEY Bronco Leather Dark Brown 3 seater sofa. Size: W223 x H95 x D102cm</p></a>
+   <a onclick="openLightbox('Sofa2Seater.jpg')"><img src="Sofa2Seater.jpg"><p></p>M&S ABBEY Bronco Leather Dark Brown 2 seater sofa. Size: W196 x H95 x D102cm</a>
+   <a onclick="openLightbox('SofaChair11.jpg')"><img src="SofaChair11.jpg"><p>M&S ABBEY Bronco Leather Dark Brown chair. Size: W95 x H95 x D95cm</p></a>
+   </div>
+   <div id="h3" class="card">
+   <div class="bannerx"> <h2>Items for sale</h2></div>
+   <p>Please email timesave34@gmail.com if interested in buying any of the items for sale.</p>
+   <div class="gallery">
+    <div class="gallery-main"> <img id="items4saleMain" src="Sofa3Seater.jpg" onclick="openLightbox(items4salePhotos[items4saleCurrent])"> </div>
+    <div class="gallery-side"> 
+      <img id="items4saleSide1" src="Sofa2Seater.jpg" onclick="openLightbox(items4salePhotos[(items4saleCurrent+1)%items4salePhotos.length])">
+      <img id="items4saleSide2" src="SofaChair11.jpg" onclick="openLightbox(items4salePhotos[(items4saleCurrent+2)%items4salePhotos.length])">
+    </div>
+   </div>
+   <div class="galleryControls"> <button onclick="items4saleManualPrevious()">❮</button> <span id="items4saleCounter"></span> <button onclick="items4saleManualNext()">❯</button> </div>
+   <p style="padding-left:2em;">The M&S ABBEY leather sofas & chairs were hand crafted using Bronco Dark Brown Leather. They are lovely pieces of furnature & being quility leather are hard wearing.</p>
+  </div>
+</div> 
+<p>==================================================================</p>
+ 
+<div class="page">
+    
   <div class="header"><h1>27 Glenholme Road, Farsley, LS285BY</h1></div>
     <h2>Detached 4 bedroom dorma bungalow with a large south facing garden, in a quiet Farsley cul-de-sac.</h2>
     <h2>£675,000.</h2>
@@ -124,6 +149,7 @@ p { margin:5px 0; }
     </div>
 </div>
 <div class="galleryControls"> <button onclick="hpicManualPrevious()">❮</button> <span id="hpicCounter"></span> <button onclick="hpicManualNext()">❯</button> </div>
+  
 </div>
 
 <h2>Key features</h2>
@@ -344,26 +370,7 @@ p { margin:5px 0; }
 <p>For more info please contact. Julies Homes, Farsley, 36 Town Street, Farsley, Leeds, LS28 5LD</p>
 <p>Tel: 0113 204 0322 <a href="mailto:info@julieshomes.co.uk?subject=27 Glenholme rd enquiry.">info@julieshomes.co.uk</a></p>
 
-<div class="bannerx"> <h2>Items for sale</h2></div>
-<div class="top-grid">
- <a onclick="openLightbox('Sofa3Seater.jpg')"><img src="Sofa3Seater.jpg"><p>M&S ABBEY Bronco Leather Dark Brown 3 seater sofa. Size: W223 x H95 x D102cm</p></a>
- <a onclick="openLightbox('Sofa2Seater.jpg')"><img src="Sofa2Seater.jpg"><p></p>M&S ABBEY Bronco Leather Dark Brown 2 seater sofa. Size: W196 x H95 x D102cm</a>
- <a onclick="openLightbox('SofaChair11.jpg')"><img src="SofaChair11.jpg"><p>M&S ABBEY Bronco Leather Dark Brown chair. Size: W95 x H95 x D95cm</p></a>
-</div>
 
-<div id="h3" class="card">
-<div class="bannerx"> <h2>Items for sale</h2></div>
-  <p>Please email timesave34@gmail.com if interested in buying any of the items for sale.</p>
-<div class="gallery">
-    <div class="gallery-main"> <img id="items4saleMain" src="Sofa3Seater.jpg" onclick="openLightbox(items4salePhotos[items4saleCurrent])"> </div>
-    <div class="gallery-side"> 
-      <img id="items4saleSide1" src="Sofa2Seater.jpg" onclick="openLightbox(items4salePhotos[(items4saleCurrent+1)%items4salePhotos.length])">
-      <img id="items4saleSide2" src="SofaChair11.jpg" onclick="openLightbox(items4salePhotos[(items4saleCurrent+2)%items4salePhotos.length])">
-    </div>
-</div>
-<div class="galleryControls"> <button onclick="items4saleManualPrevious()">❮</button> <span id="items4saleCounter"></span> <button onclick="items4saleManualNext()">❯</button> </div>
-<p style="padding-left:2em;">The M&S ABBEY leather sofas & chairs were hand crafted using Bronco Dark Brown Leather. They are lovely pieces of furnature & being quility leather are hard wearing.</p>
-</div>
 
   
 <!-- Lightbox overlay -->
