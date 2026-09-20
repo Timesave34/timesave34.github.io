@@ -267,7 +267,7 @@ function sendOrder() {
 
   body += "\nTotal: GBP " + total;
 
-  var email = 'ianbeeton@hotmail.co.uk';
+  var email = 'timesave34@gmail.com';
   var subject = 'Plant Order';
 
   var link = 'mailto:' + email +
