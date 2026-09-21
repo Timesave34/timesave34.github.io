@@ -17,6 +17,9 @@ img { width:100%; border-radius:10px; max-width:1400px}
 .galleryControls{display:flex;justify-content:center;align-items:center;gap:10px;margin:2px;}
 .galleryControls button{width:50px;font-size:26px;}
 
+.item-label { display:block; background:#fff; border-radius:6px; padding:6px 8px; margin:4px 0 10px; font-size:0.95em; }
+.item-label input { width:auto; margin-right:6px; }
+
 .otop-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0px; padding: 1px; }
 .otop-grid img { width: 100%; border-radius: 1px; }
 .otop-grid a { text-decoration: none; color: #000; }
@@ -108,7 +111,8 @@ p { margin:5px 0; }
 <body>
 <div class="page">
  <div class="header"><h1>Items for sale.</h1></div>
-  <p>Please email timesave34@gmail.com if interested in buying any of the items for sale.</p> 
+  <p>Tick the box next to anything you're interested in, then tap the button below and an email will be started for you with those items listed.</p>
+  <button onclick="emailSelectedItems()">📧 Email us about the item(s) I've ticked</button>
   <div class="bannerx"> <h2>Marks & Spenser Dark Brown Bronco Leather (ABBEY Range) £900</h2></div>
   <p>The M&S ABBEY leather sofas & chair was hand crafted using Bronco Dark Brown Leather. They are lovely pieces of furnature & being made from quality leather are hard wearing.</p>
   <p>3 seater sofa (Size: W223 x H95 x D102cm), 2 seater sofa (Size: W196 x H95 x D102cm), Chair (Size: W95 x H95 x D95cm).</p>
@@ -123,22 +127,36 @@ p { margin:5px 0; }
    <div class="galleryControls"> <button onclick="items4saleManualPrevious()">❮</button> <span id="items4saleCounter"></span> <button onclick="items4saleManualNext()">❯</button> </div>
   </div>
   <div class="top-grid">
-   <a onclick="openLightbox('FSSofa3Seater.jpg')"><img src="FSSofa3Seater.jpg"><p>M&S ABBEY Bronco Leather Dark Brown 3 seater sofa. Size: W223 x H95 x D102cm</p></a>
-   <a onclick="openLightbox('FSSofa2Seater.jpg')"><img src="FSSofa2Seater.jpg"><p>M&S ABBEY Bronco Leather Dark Brown 2 seater sofa. Size: W196 x H95 x D102cm</p></a>
-   <a onclick="openLightbox('FSSofaChair11.jpg')"><img src="FSSofaChair11.jpg"><p>M&S ABBEY Bronco Leather Dark Brown chair. Size: W95 x H95 x D95cm</p></a>
+   <div><a onclick="openLightbox('FSSofa3Seater.jpg')"><img src="FSSofa3Seater.jpg"><p>M&S ABBEY Bronco Leather Dark Brown 3 seater sofa. Size: W223 x H95 x D102cm</p></a>
+   <label class="item-label"><input type="checkbox" class="item-select" data-label="3 Seater Sofa"> Interested in this</label></div>
+   <div><a onclick="openLightbox('FSSofa2Seater.jpg')"><img src="FSSofa2Seater.jpg"><p>M&S ABBEY Bronco Leather Dark Brown 2 seater sofa. Size: W196 x H95 x D102cm</p></a>
+   <label class="item-label"><input type="checkbox" class="item-select" data-label="2 Seater Sofa"> Interested in this</label></div>
+   <div><a onclick="openLightbox('FSSofaChair11.jpg')"><img src="FSSofaChair11.jpg"><p>M&S ABBEY Bronco Leather Dark Brown chair. Size: W95 x H95 x D95cm</p></a>
+   <label class="item-label"><input type="checkbox" class="item-select" data-label="Armchair"> Interested in this</label></div>
   </div>
 
   <div class="top-grid">
-   <a onclick="openLightbox('FSMirrorS1.jpg')"><img src="FSMirrorS1.jpg"><p>2 x IKEA Songe Mirrors</p></a>
-   <a onclick="openLightbox('FSMirrorS2.jpg')"><img src="FSMirrorS2.jpg"><p> </p></a>
-   <a onclick="openLightbox('FSchest1.jpg')"><img src="FSchest1.jpg"><p> </p></a>
-   <a onclick="openLightbox('FSchest2.jpg')"><img src="FSchest2.jpg"><p> </p></a>
-   <a onclick="openLightbox('FSaw1.jpg')"><img src="FSaw1.jpg"><p>IKEA  </p></a>
-   <a onclick="openLightbox('FSgw1.jpg')"><img src="FSgw1.jpg"><p>IKEA </p></a>
-   <a onclick="openLightbox('FSKoppang3.jpg')"><img src="FSKoppang3.jpg"><p>2 white IKEA Koppang chest of drawers.</p></a>
-   <a onclick="openLightbox('FSHemnes6.jpg')"><img src="FSHemnes6.jpg"><p>Real wood IKEA Hemnes 6 drawer chest of drawers.</p></a>
-   <a onclick="openLightbox('FSHemnes8.jpg')"><img src="FSHemnes8.jpg"><p>Real wood IKEA Hemnes 8 drawer chest of drawers. </p></a> 
+   <div><a onclick="openLightbox('FSMirrorS1.jpg')"><img src="FSMirrorS1.jpg"><p>2 x IKEA Songe Mirrors</p></a>
+   <label class="item-label"><input type="checkbox" class="item-select" data-label="IKEA Songe Mirror 1"> Interested in this</label></div>
+   <div><a onclick="openLightbox('FSMirrorS2.jpg')"><img src="FSMirrorS2.jpg"><p> </p></a>
+   <label class="item-label"><input type="checkbox" class="item-select" data-label="IKEA Songe Mirror 2"> Interested in this</label></div>
+   <div><a onclick="openLightbox('FSchest1.jpg')"><img src="FSchest1.jpg"><p> </p></a>
+   <label class="item-label"><input type="checkbox" class="item-select" data-label="Chest 1"> Interested in this</label></div>
+   <div><a onclick="openLightbox('FSchest2.jpg')"><img src="FSchest2.jpg"><p> </p></a>
+   <label class="item-label"><input type="checkbox" class="item-select" data-label="Chest 2"> Interested in this</label></div>
+   <div><a onclick="openLightbox('FSaw1.jpg')"><img src="FSaw1.jpg"><p>IKEA  </p></a>
+   <label class="item-label"><input type="checkbox" class="item-select" data-label="IKEA (aw1)"> Interested in this</label></div>
+   <div><a onclick="openLightbox('FSgw1.jpg')"><img src="FSgw1.jpg"><p>IKEA </p></a>
+   <label class="item-label"><input type="checkbox" class="item-select" data-label="IKEA (gw1)"> Interested in this</label></div>
+   <div><a onclick="openLightbox('FSKoppang3.jpg')"><img src="FSKoppang3.jpg"><p>2 white IKEA Koppang chest of drawers.</p></a>
+   <label class="item-label"><input type="checkbox" class="item-select" data-label="IKEA Koppang Chest of Drawers"> Interested in this</label></div>
+   <div><a onclick="openLightbox('FSHemnes6.jpg')"><img src="FSHemnes6.jpg"><p>Real wood IKEA Hemnes 6 drawer chest of drawers.</p></a>
+   <label class="item-label"><input type="checkbox" class="item-select" data-label="IKEA Hemnes 6 Drawer Chest"> Interested in this</label></div>
+   <div><a onclick="openLightbox('FSHemnes8.jpg')"><img src="FSHemnes8.jpg"><p>Real wood IKEA Hemnes 8 drawer chest of drawers. </p></a>
+   <label class="item-label"><input type="checkbox" class="item-select" data-label="IKEA Hemnes 8 Drawer Chest"> Interested in this</label></div>
   </div>
+
+  <button onclick="emailSelectedItems()">📧 Email us about the item(s) I've ticked</button>
 </div> 
   
 <p>==================================================================</p>
@@ -716,6 +734,18 @@ items4saleRefresh();
 items4saleResetAutoPlay();
 /* ==================== end of items4sale ==================== */
   
+function emailSelectedItems() {
+  var checked = document.querySelectorAll('.item-select:checked');
+  if (checked.length === 0) {
+    alert("Please tick at least one item you're interested in first.");
+    return;
+  }
+  var items = Array.from(checked).map(function(cb) { return "- " + cb.dataset.label; }).join("\n");
+  var subject = "Interested in items for sale";
+  var body = "Hi, I'm interested in the following item(s):\n\n" + items;
+  window.location.href = "mailto:timesave34@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+}
+
 function goTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
@@ -730,5 +760,3 @@ function goBottom() {
 </div></div>
 </body>
 </html>
-
-
