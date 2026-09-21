@@ -1,0 +1,731 @@
+<!DOCTYPE html><html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>For sale 27 Glenholme Rd, Farsley, LS285BY £675,000</title>
+<style>
+body { font-family: Arial; background:#f0f7f0; margin:0px; padding: 0; color:#000; padding-bottom: 120px; }
+.page{max-width:1400px;margin:0 auto;background:#f0f7f0;}
+.card { background:#DAE8DA; margin:15px; padding:15px; border-radius:10px; text-align:center; }
+
+.header { background:#2e7d32; color:#000000; padding:10px; text-align:center; }
+.bannerx { background:#DAE8DA; color:#000000; padding:0px; text-align:center; }
+img { width:100%; border-radius:10px; max-width:1400px}
+.gallery{display:grid;grid-template-columns:2fr 1fr;gap:2px;width:100%;}
+.gallery-main img{width:100%!important;max-width:none!important;height:420px;object-fit:cover;display:block;cursor:pointer;}
+.gallery-side{display:grid;grid-template-rows:1fr 1fr;gap:2px;}
+.gallery-side img{width:100%!important;max-width:none!important;height:207px;object-fit:cover;display:block;cursor:pointer;}
+.gallery{display:grid;grid-template-columns:2fr 1fr;gap:2px;max-width:1200px;margin:10px auto;}
+.galleryControls{display:flex;justify-content:center;align-items:center;gap:10px;margin:2px;}
+.galleryControls button{width:50px;font-size:26px;}
+
+.otop-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0px; padding: 1px; }
+.otop-grid img { width: 100%; border-radius: 1px; }
+.otop-grid a { text-decoration: none; color: #000; }
+
+button { width:100%; padding:10px; margin-top:10px; background:#2e7d32; color:#fff; border:none; border-radius:6px; }
+p { margin:5px 0; }
+
+#topBtn, #bottomBtn {position: fixed; right: 5px; width: 20%; max-width: 45px; padding: 2px; border: none; border-radius: 4px; background: #2e7d32; color: white; cursor: pointer; }
+#topBtn { bottom: 110px; }
+#bottomBtn { bottom: 60px; } 
+
+#lightbox {  display: none;  position: fixed;  inset: 0;  background: rgba(0,0,0,0.9);  z-index: 1000;  flex-direction: column;  align-items: center;  justify-content: center;}
+#lightbox.active { display: flex; }
+#lightbox-close {  color: white;  background: #2e7d32;  border-radius: 6px;  padding: 10px 24px;  font-size: 18px;  cursor: pointer;  margin-bottom: 12px;  user-select: none;}
+#lightbox-img {  max-width: 95vw;  max-height: 80vh;  object-fit: contain;  border-radius: 2px;  cursor: pointer;}
+
+#icon1 {width: 600px;height: auto;}
+@media (max-width: 600px) {#icon1 {width: 100%;}}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+  .otop-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  body {   padding: 0 10px;   /* Less padding on mobile */  }
+  .gallery {
+    grid-template-columns: 1fr;   /* Stack everything vertically */
+    margin: 5px auto;
+  }
+  .gallery-side {
+    display: none;   /* Hide side images on mobile*/
+  }
+  .gallery-main img {
+    height: auto;    /* Let it adjust naturally on phone */
+    max-height: 55vh; /* Optional: prevent it from being too tall */
+  }
+}
+
+/* Optional: If you want to show the side images below on mobile instead of hiding them */
+@media (max-width: 768px) {
+  .gallery-side {    display: grid;    grid-template-columns: 1fr 1fr;   /* side-by-side below main */
+    grid-template-rows: auto;  }
+  .gallery-side img {    height: 180px;  } 
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;  /* 2 per row on desktop */
+  gap: 6px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin: 10px;
+}
+.feature {
+  background: #fff;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 1.17em;  /* matches default h3 size */
+  font-weight: bold;  /* matches h3 bold */
+}
+
+/* 1 per row on mobile */
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.prop-video {
+  width: 100%;
+  max-width: 900px;  /* wide on desktop */
+  max-height: 80vh;
+  border-radius: 2px;
+  display: block;
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+  .prop-video {
+    max-width: 100%;  /* full width on phone */
+    max-height: 60vh;
+  }
+}
+</style>
+  <script data-goatcounter="https://timesave34.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</head> 
+  
+<body>
+<div class="page">
+ <div class="header"><h1>Items for sale.</h1></div>
+  <p>Please email timesave34@gmail.com if interested in buying any of the items for sale.</p> 
+  <div class="bannerx"> <h2>Marks & Spenser Dark Brown Bronco Leather (ABBEY Range) £900</h2></div>
+  <p>The M&S ABBEY leather sofas & chair was hand crafted using Bronco Dark Brown Leather. They are lovely pieces of furnature & being made from quality leather are hard wearing.</p>
+  <p>3 seater sofa (Size: W223 x H95 x D102cm), 2 seater sofa (Size: W196 x H95 x D102cm), Chair (Size: W95 x H95 x D95cm).</p>
+  <div id="h3" class="card">
+   <div class="gallery">
+    <div class="gallery-main"> <img id="items4saleMain" src="FSSofa3Seater.jpg" onclick="openLightbox(items4salePhotos[items4saleCurrent])"> </div>
+    <div class="gallery-side"> 
+      <img id="items4saleSide1" src="FSSofa2Seater.jpg" onclick="openLightbox(items4salePhotos[(items4saleCurrent+1)%items4salePhotos.length])">
+      <img id="items4saleSide2" src="FSSofaChair11.jpg" onclick="openLightbox(items4salePhotos[(items4saleCurrent+2)%items4salePhotos.length])">
+    </div>
+   </div>
+   <div class="galleryControls"> <button onclick="items4saleManualPrevious()">❮</button> <span id="items4saleCounter"></span> <button onclick="items4saleManualNext()">❯</button> </div>
+  </div>
+  <div class="top-grid">
+   <a onclick="openLightbox('FSSofa3Seater.jpg')"><img src="FSSofa3Seater.jpg"><p>M&S ABBEY Bronco Leather Dark Brown 3 seater sofa. Size: W223 x H95 x D102cm</p></a>
+   <a onclick="openLightbox('FSSofa2Seater.jpg')"><img src="FSSofa2Seater.jpg"><p>M&S ABBEY Bronco Leather Dark Brown 2 seater sofa. Size: W196 x H95 x D102cm</p></a>
+   <a onclick="openLightbox('FSSofaChair11.jpg')"><img src="FSSofaChair11.jpg"><p>M&S ABBEY Bronco Leather Dark Brown chair. Size: W95 x H95 x D95cm</p></a>
+  </div>
+
+  <div class="top-grid">
+   <a onclick="openLightbox('FSMirrorS1.jpg')"><img src="FSMirrorS1.jpg"><p>2 x IKEA Songe Mirrors</p></a>
+   <a onclick="openLightbox('FSMirrorS2.jpg')"><img src="FSMirrorS2.jpg"><p> </p></a>
+   <a onclick="openLightbox('FSchest1.jpg')"><img src="FSchest1.jpg"><p> </p></a>
+   <a onclick="openLightbox('FSchest2.jpg')"><img src="FSchest2.jpg"><p> </p></a>
+   <a onclick="openLightbox('FSaw1.jpg')"><img src="FSaw1.jpg"><p>IKEA  </p></a>
+   <a onclick="openLightbox('FSgw1.jpg')"><img src="FSgw1.jpg"><p>IKEA </p></a>
+   <a onclick="openLightbox('FSKoppang3.jpg')"><img src="FSKoppang3.jpg"><p>2 white IKEA Koppang chest of drawers.</p></a>
+   <a onclick="openLightbox('FSHemnes6.jpg')"><img src="FSHemnes6.jpg"><p>Real wood IKEA Hemnes 6 drawer chest of drawers.</p></a>
+   <a onclick="openLightbox('FSHemnes8.jpg')"><img src="FSHemnes8.jpg"><p>Real wood IKEA Hemnes 8 drawer chest of drawers. </p></a> 
+  </div>
+</div> 
+  
+<p>==================================================================</p>
+ 
+<div class="page">
+  <div class="header"><h1>27 Glenholme Road, Farsley, LS285BY</h1></div>
+    <h2>Detached 4 bedroom dorma bungalow with a large south facing garden, in a quiet Farsley cul-de-sac.</h2>
+    <h2>£675,000.</h2>
+    <p>Situated in a sought after area of Farsley close to local amenities & public transport including New Pudsey train station.</p>
+  <img src="icon1.jpg" id="icon1">
+  <p>Note: All area & perimeter figures have been taken from Google earth.</p>
+<a href="#video"><button>🎬 Skip down to video walkthroughs</button></a> <a href="#floorplan"><button> Skip down to floor plan & EPC</button></a> 
+
+<div class="bannerx"> <h2></h2> 
+<div class="gallery">
+    <div class="gallery-main"> <img id="hpicMain" src="h2.jpg" onclick="openLightbox(hpicPhotos[hpicCurrent])"> </div>
+    <div class="gallery-side"> 
+      <img id="hpicSide1" src="bg04.jpg" onclick="openLightbox(hpicPhotos[(hpicCurrent+1)%hpicPhotos.length])">
+      <img id="hpicSide2" src="h3.jpg" onclick="openLightbox(hpicPhotos[(hpicCurrent+2)%hpicPhotos.length])">
+    </div>
+</div>
+<div class="galleryControls"> <button onclick="hpicManualPrevious()">❮</button> <span id="hpicCounter"></span> <button onclick="hpicManualNext()">❯</button> </div>
+  
+</div>
+
+<h2>Key features</h2>
+<div class="features-grid">
+  <div class="feature">&#x2022; 4 double bedrooms</div>
+  <div class="feature">&#x2022; Large south-facing plot (679.2m<sup>2</sup>)</div>
+  <div class="feature">&#x2022; Large garden</div>
+  <div class="feature">&#x2022; Sought after Farsley location</div>
+  <div class="feature">&#x2022; Quiet cul-de-sac</div>
+  <div class="feature">&#x2022; 2 bathrooms</div>
+  <div class="feature">&#x2022; Large lounge with log burner</div>
+  <div class="feature">&#x2022; Off-street parking for 4+ cars</div>
+  <div class="feature">&#x2022; Secure garage</div>
+  <div class="feature">&#x2022; Council Tax Band: C</div>
+</div>
+  
+  <div class="bannerx"> <h2>House</h2></div>
+  
+   <a onclick="openLightbox('h2.jpg')"><img src="h2.jpg"><p></p></a>
+   <a onclick="openLightbox('h4.jpg')"><img src="h4.jpg"><p></p></a>
+   <a onclick="openLightbox('h3.jpg')"><img src="h3.jpg"><p></p></a>
+  
+  
+<div class="bannerx"> <h2>Plot</h2></div>
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:4px;">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d341.67142138054544!2d-1.677176358842703!3d53.8079979921793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487be1f4225c0a65%3A0[...]
+    style="width:100%; height:350px; border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  <img src="GE2.jpg" onclick="openLightbox('GE2.jpg')" style="width:100%; height:350px; object-fit:cover; cursor:pointer; border-radius:10px;">
+</div>
+<p style="padding-left:2em;">Large plot. Area:679.2m<sup>2</sup>, Perimeter: 114.85m with large south facing garden 300.7m<sup>2</sup>, perimeter 72.73m. Two original eating apple trees from when the [...]
+  
+  
+<div class="bannerx"> <h2>Lounge gallery</h2></div>
+<div class="gallery">
+    <div class="gallery-main"> <img id="loungeMain" src="lounge01.jpg" onclick="openLightbox(loungePhotos[loungeCurrent])"> </div>
+    <div class="gallery-side"> 
+      <img id="loungeSide1" src="lounge02.jpg" onclick="openLightbox(loungePhotos[(loungeCurrent+1)%loungePhotos.length])">
+      <img id="loungeSide2" src="lounge03.jpg" onclick="openLightbox(loungePhotos[(loungeCurrent+2)%loungePhotos.length])">
+    </div>
+</div>
+<div class="galleryControls"> <button onclick="loungeManualPrevious()">❮</button> <span id="loungeCounter"></span> <button onclick="loungeManualNext()">❯</button> </div>
+<p style="padding-left:2em;">South facing. Solid oak floor 20mm thick. Large aluminium sliding patio door leading to rear patio & garden.</p>
+<p style="padding-left:2em;">Burley Fireball Brampton 8kw Log Burner (Most efficient wood burning stove in the world).</p>
+
+<div class="bannerx"> <h2>Dining Room</h2></div>
+<div class="gallery">
+    <div class="gallery-main"> <img id="diningMain" src="dr01.jpg" onclick="openLightbox(diningPhotos[diningCurrent])"> </div>
+    <div class="gallery-side"> 
+      <img id="diningSide1" src="dr02.jpg" onclick="openLightbox(diningPhotos[(diningCurrent+1)%diningPhotos.length])">
+      <img id="diningSide2" src="dr03.jpg" onclick="openLightbox(diningPhotos[(diningCurrent+2)%diningPhotos.length])">
+    </div>
+</div>
+<div class="galleryControls"> <button onclick="diningManualPrevious()">❮</button> <span id="diningCounter"></span> <button onclick="diningManualNext()">❯</button> </div>
+<p style="padding-left:2em;">Large dining room with french doors opening onto lounge.</p>
+
+<div class="bannerx"> <h2>Kitchen</h2></div>
+<div class="gallery">
+    <div class="gallery-main"> <img id="kitchenMain" src="k1.jpg" onclick="openLightbox(kitchenPhotos[kitchenCurrent])"> </div>
+    <div class="gallery-side"> 
+      <img id="kitchenSide1" src="k2.jpg" onclick="openLightbox(kitchenPhotos[(kitchenCurrent+1)%kitchenPhotos.length])">
+      <img id="kitchenSide2" src="k3.jpg" onclick="openLightbox(kitchenPhotos[(kitchenCurrent+2)%kitchenPhotos.length])">
+    </div>
+</div>
+<div class="galleryControls"> <button onclick="kitchenManualPrevious()">❮</button> <span id="kitchenCounter"></span> <button onclick="kitchenManualNext()">❯</button> </div>
+ <p style="padding-left:2em;">Double steam oven with integrated microwave, SMEG dishwasher, large Haier washing machine, Samsung fridge freezer, large 4 burner gas hob.</p>
+
+<div class="bannerx"> <h2>Bathroom</h2></div>
+<div class="gallery">
+    <div class="gallery-main"> <img id="bathroomMain" src="br01.jpg" onclick="openLightbox(bathroomPhotos[bathroomCurrent])"> </div>
+    <div class="gallery-side"> 
+      <img id="bathroomSide1" src="br02.jpg" onclick="openLightbox(bathroomPhotos[(bathroomCurrent+1)%bathroomPhotos.length])">
+      <img id="bathroomSide2" src="br03.jpg" onclick="openLightbox(bathroomPhotos[(bathroomCurrent+2)%bathroomPhotos.length])">
+    </div>
+</div>
+<div class="galleryControls"> <button onclick="bathroomManualPrevious()">❮</button> <span id="bathroomCounter"></span> <button onclick="bathroomManualNext()">❯</button> </div>
+<p style="padding-left:2em;">Large jacuzzi bath, toilet & sink with plenty of storage & a large towel rail radiator.</p>
+
+  <div class="bannerx"> <h2>Bedroom 1</h2></div>
+  <div class="top-grid">
+   <a onclick="openLightbox('gbed01.jpg')"><img src="gbed01.jpg"><p></p></a>
+   <a onclick="openLightbox('gbed02.jpg')"><img src="gbed02.jpg"><p></p></a>
+  </div>
+  <p style="padding-left:2em;">Plenty of light as its south facing with another west facing window for evening sun. It can easily accommodate a double bed. Wardrobes & storage.</p>
+  
+  <div class="bannerx"> <h2>Bedroom 2</h2></div>
+  <div class="top-grid">
+   <a onclick="openLightbox('abed01.jpg')"><img src="abed01.jpg"><p></p></a>
+   <a onclick="openLightbox('abed02.jpg')"><img src="abed02.jpg"><p></p></a>
+  </div>
+  <p style="padding-left:2em;">Plenty of light as its south facing with another east facing window for morning sun. It can easily accommodate a double bed. Wardrobes & storage.</p>
+  
+  <div class="bannerx"> <h2>Bedroom 3</h2></div>
+  <div class="top-grid">
+   <a onclick="openLightbox('gym01.jpg')"><img src="gym01.jpg"><p></p></a>
+   <a onclick="openLightbox('gym02.jpg')"><img src="gym02.jpg"><p></p></a>
+  </div>
+  <p style="padding-left:2em;">Currently being used as a gym, but this bedroom can easily accommodate a double bed. It has 1 double wardrobe with 2 large storage rooms hidden in the wall.</p>
+
+  <div class="bannerx"> <h2>Shower room</h2></div>
+  <div class="top-grid">
+   <a onclick="openLightbox('sr01.jpg')"><img src="sr01.jpg"><p></p></a>
+   <a onclick="openLightbox('sr02.jpg')"><img src="sr02.jpg"><p></p></a>
+   <a onclick="openLightbox('sr03.jpg')"><img src="sr03.jpg"><p></p></a>
+  </div>
+  <p style="padding-left:2em;">Double shower with easy clean waterproof IPSL panels so no grouting needed. Large towel rail radiator.</p>
+
+  <div class="bannerx"> <h2>Bedroom 4</h2></div>
+  <div class="top-grid">
+   <a onclick="openLightbox('b401.jpg')"><img src="b401.jpg"><p></p></a>
+   <a onclick="openLightbox('b402.jpg')"><img src="b402.jpg"><p></p></a>
+   <a onclick="openLightbox('b403.jpg')"><img src="b403.jpg"><p></p></a>
+  </div>
+<p style="padding-left:2em;">Plenty of light as its south facing. There are 5 fitted wardrobes & 14 drawers for storage. King sizes bed.</p>
+  
+<div id="h2" class="card">
+<img src="h2.jpg">
+<p>Front garden 65.67m<sup>2</sup> with 2 raised beds made from oak railway sleepers. Front lawn 48.19m<sup>2</sup> using Grass grids that allow vehicles weighing up to 20 tonnes to park without damag[...]
+</div>
+    
+<div id="h4" class="card">
+<img src="h4.jpg">
+<p>House from the side</p>
+</div>
+    
+<div id="h3" class="card">
+<img src="h3.jpg">
+<div class="bannerx"> <h2>Garden</h2></div>
+<p>South facing garden so gets the sun all day.</p>
+<div class="gallery">
+    <div class="gallery-main"> <img id="gardenMain" src="bg01.jpg" onclick="openLightbox(gardenPhotos[gardenCurrent])"> </div>
+    <div class="gallery-side"> 
+      <img id="gardenSide1" src="bg02.jpg" onclick="openLightbox(gardenPhotos[(gardenCurrent+1)%gardenPhotos.length])">
+      <img id="gardenSide2" src="bg03.jpg" onclick="openLightbox(gardenPhotos[(gardenCurrent+2)%gardenPhotos.length])">
+    </div>
+</div>
+<div class="galleryControls"> <button onclick="gardenManualPrevious()">❮</button> <span id="gardenCounter"></span> <button onclick="gardenManualNext()">❯</button> </div>
+<p style="padding-left:2em;">Rear garden 300.7m<sup>2</sup> with fruit trees, greenhouse & lawn 166.8m<sup>2</sup>.Large patio 52.15m<sup>2</sup></p>
+</div>
+    
+  <div class="bannerx"> <h2>Garage</h2></div>
+  <div class="top-grid">
+   <a onclick="openLightbox('garage1.jpg')"><img src="garage1.jpg"><p>Garage insulated & clad using IPSL panels. Contains White Knight tumble dryer.</p></a>
+   <a onclick="openLightbox('garage2.jpg')"><img src="garage2.jpg"><p>Also has 12mm rubbermat flooring.</p></a>
+    <a onclick="openLightbox('d01.jpg')"><img src="d01.jpg"><p>Long 21.54m driveway for cars.</p></a>
+    <a onclick="openLightbox('logstore01.jpg')"><img src="logstore01.jpg"><p>Secure storage & logstore.</p></a>
+  </div>
+
+
+  <div class="bannerx"> <h2>Attic storage</h2></div>
+  <div class="top-grid">
+   <a onclick="openLightbox('attic1.jpg')"><img src="attic1.jpg"><p></p></a>
+   <a onclick="openLightbox('attic2.jpg')"><img src="attic2.jpg"><p></p></a>
+  </div>
+  <p style="padding-left:2em;">The attic is boarded & insulated & its large enough to walk around upright. Plenty of room for storage. The attic has low voltage strip lighting & electrical sockets.</p[...]
+
+  <div class="bannerx"> <h2>Large hallway</h2></div>
+  <div class="top-grid">
+   <a onclick="openLightbox('hall1.jpg')"><img src="hall1.jpg"><p></p></a>
+  <a onclick="openLightbox('hall4.jpg')"><img src="hall4.jpg"><p></p>Large enough for desk / office.</a>
+   <a onclick="openLightbox('hall2.jpg')"><img src="hall2.jpg"><p></p></a>
+   <a onclick="openLightbox('landing01.jpg')"><img src="landing01.jpg"><p>Landing.</p></a>
+  </div>
+  
+  <div class="bannerx"> <h2>Gym hidden storage</h2></div>
+  <div class="otop-grid">
+    <a onclick="openLightbox('gymstorageb1.jpg')"><img src="gymstorageb1.jpg"><p>Closed</p></a>
+   <a onclick="openLightbox('gymstorage1.jpg')"><img src="gymstorage1.jpg"><p>Open</p></a>
+    <a onclick="openLightbox('gymstorageb2.jpg')"><img src="gymstorageb2.jpg"><p>Closed</p></a>
+   <a onclick="openLightbox('gymstorage2.jpg')"><img src="gymstorage2.jpg"><p>Open</p></a>
+  </div>
+<p style="padding-left:2em;">These hidden storage areas provide loads of extra storage space but as they are hidden in the walls they dont impact the room space.</p>
+
+<div id="video" style="background:#DAE8DA;">
+  <div class="bannerx"> <h2>Lounge 🎬</h2></div>
+  <video controls poster="lounge01.jpg" class="prop-video">
+  <source src="HouseLounge1.mp4" type="video/mp4">
+</video>
+
+  <div class="bannerx"> <h2>Kitchen & Dining Room 🎬</h2> </div>
+  <video controls poster="dr03.jpg" class="prop-video">
+  <source src="HouseKndr1.mp4" type="video/mp4">
+</video>
+  <div class="bannerx"> <h2>Bathroom & Bedroom 🎬</h2> </div>
+  <video controls poster="br01.jpg" class="prop-video">
+  <source src="HouseBathnbed1.mp4" type="video/mp4">
+</video>
+
+<div class="bannerx"> <h2>Upstairs 🎬</h2>   </div>
+  <video controls poster="landing01.jpg" class="prop-video">
+  <source src="HouseUpstairs1.mp4" type="video/mp4">
+</video>
+
+<div class="bannerx"> <h2>Garden 🎬</h2>   </div>
+  <video controls poster="bg01.jpg" class="prop-video">
+  <source src="HouseGarden1.mp4" type="video/mp4">
+</video>
+</div>
+<p>&nbsp</p>
+<div class="header"><h2>27 Glenholme Road, Farsley, LS285BY. 4 Bedroom detached dorma bungalow. £675,000 </h2></div>
+<p>&nbsp</p>
+
+<div id="floorplan" style="background:#DAE8DA;">
+<div class="bannerx"> <h2>Floor plan & Energy rating.</h2></div>
+  <div class="otop-grid">
+    <a onclick="openLightbox('FloorPlan1e.jpg')"><img src="FloorPlan1e.jpg"><p>Floorplan</p></a>
+   <a onclick="openLightbox('EPC_C.jpg')"><img src="EPC_C.jpg"><p>EPC</p></a>
+  </div>
+<p style="padding-left:2em;"></p>
+  
+<div class="bannerx"> <h2>10 week Grass grid install 🎬</h2   </div>
+  <video controls class="prop-video">
+  <source src="flt10.mp4" type="video/mp4">
+</video>
+</div>
+    <p>Interesting fact. Just over 20 tonnes were removed from the front to allow the grids to be installed. </p>
+<p>&nbsp</p>
+
+<p>For more info please contact. Julies Homes, Farsley, 36 Town Street, Farsley, Leeds, LS28 5LD</p>
+<p>Tel: 0113 204 0322 <a href="mailto:info@julieshomes.co.uk?subject=27 Glenholme rd enquiry.">info@julieshomes.co.uk</a></p>
+
+
+
+  
+<!-- Lightbox overlay -->
+<div id="lightbox">
+  <div id="lightbox-close" onclick="closeLightbox()">✕ Close</div>
+  <img id="lightbox-img" src="" onclick="closeLightbox()">
+</div>
+
+<script>
+
+function openLightbox(src) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox').classList.add('active');
+  return false; // prevents the href anchor jump
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeLightbox();
+});
+
+const hpicPhotos=[
+"h2.jpg",
+"bg04.jpg",
+"h3.jpg",
+"bg01.jpg",
+"h4.jpg",
+"bg08.jpg",
+"bg02.jpg",
+"bg03.jpg",
+"bg05.jpg",
+"bg06.jpg",
+"bg07.jpg",
+"lounge01.jpg",
+"lounge02.jpg",
+"lounge03.jpg",
+"dr01.jpg",
+"dr02.jpg",
+"dr03.jpg",
+"dr04.jpg",
+"k1.jpg",
+"k2.jpg",
+"k3.jpg",
+"k4.jpg",
+"br01.jpg",
+"br02.jpg",
+"br03.jpg",
+"gbed01.jpg",
+"gbed02.jpg",
+"abed01.jpg",
+"abed02.jpg",
+"gym01.jpg",
+"gym02.jpg",
+"sr01.jpg",
+"sr03.jpg",
+"b401.jpg",
+"b402.jpg",
+"b403.jpg",
+"garage1.jpg",
+"garage2.jpg",
+"d01.jpg",
+"logstore01.jpg",
+"hall1.jpg",
+"hall4.jpg",
+"hall2.jpg",
+"hall3.jpg"
+];
+
+let hpicCurrent=0;
+let hpicAutoPlay;
+
+function hpicRefresh(){
+document.getElementById("hpicMain").src=
+hpicPhotos[hpicCurrent];
+document.getElementById("hpicSide1").src=
+hpicPhotos[(hpicCurrent+1)%hpicPhotos.length];
+document.getElementById("hpicSide2").src=
+hpicPhotos[(hpicCurrent+2)%hpicPhotos.length];
+document.getElementById("hpicCounter").innerHTML=
+(hpicCurrent+1)+" / "+hpicPhotos.length;
+}
+
+function hpicNext(){
+  hpicCurrent++;
+  if(hpicCurrent>=hpicPhotos.length) 
+    hpicCurrent=0; 
+    hpicRefresh(); 
+}
+function hpicPrevious(){ 
+  hpicCurrent--; 
+  if(hpicCurrent<0)  
+    hpicCurrent=hpicPhotos.length-1; 
+    hpicRefresh(); }
+
+function hpicManualNext(){
+  hpicNext();
+  hpicResetAutoPlay();
+}
+function hpicManualPrevious(){
+  hpicPrevious();
+  hpicResetAutoPlay();
+}
+function hpicResetAutoPlay(){
+  clearInterval(hpicAutoPlay);
+  hpicAutoPlay = setInterval(hpicNext, 5000);
+}
+
+hpicRefresh();
+hpicResetAutoPlay();
+
+/* ==================== lounge ==================== */
+const loungePhotos=[
+  "lounge01.jpg",
+  "lounge02.jpg",
+  "lounge03.jpg"
+];
+
+let loungeCurrent=0;
+let loungeAutoPlay;
+
+function loungeRefresh(){
+  document.getElementById("loungeMain").src=loungePhotos[loungeCurrent];
+  document.getElementById("loungeSide1").src=loungePhotos[(loungeCurrent+1)%loungePhotos.length];
+  document.getElementById("loungeSide2").src=loungePhotos[(loungeCurrent+2)%loungePhotos.length];
+  document.getElementById("loungeCounter").innerHTML=(loungeCurrent+1)+" / "+loungePhotos.length;
+}
+function loungeNext(){
+  loungeCurrent++;
+  if(loungeCurrent>=loungePhotos.length) loungeCurrent=0;
+  loungeRefresh();
+}
+function loungePrevious(){
+  loungeCurrent--;
+  if(loungeCurrent<0) loungeCurrent=loungePhotos.length-1;
+  loungeRefresh();
+}
+function loungeManualNext(){ loungeNext(); loungeResetAutoPlay(); }
+function loungeManualPrevious(){ loungePrevious(); loungeResetAutoPlay(); }
+function loungeResetAutoPlay(){
+  clearInterval(loungeAutoPlay);
+  loungeAutoPlay = setInterval(loungeNext, 5500);
+}
+
+loungeRefresh();
+loungeResetAutoPlay();
+
+/* ==================== end of lounge ==================== */
+const diningPhotos=[
+  "dr01.jpg",
+  "dr02.jpg",
+  "dr03.jpg",
+  "dr04.jpg"
+];
+
+let diningCurrent=0;
+let diningAutoPlay;
+
+function diningRefresh(){
+  document.getElementById("diningMain").src=diningPhotos[diningCurrent];
+  document.getElementById("diningSide1").src=diningPhotos[(diningCurrent+1)%diningPhotos.length];
+  document.getElementById("diningSide2").src=diningPhotos[(diningCurrent+2)%diningPhotos.length];
+  document.getElementById("diningCounter").innerHTML=(diningCurrent+1)+" / "+diningPhotos.length;
+}
+function diningNext(){
+  diningCurrent++;
+  if(diningCurrent>=diningPhotos.length) diningCurrent=0;
+  diningRefresh();
+}
+function diningPrevious(){
+  diningCurrent--;
+  if(diningCurrent<0) diningCurrent=diningPhotos.length-1;
+  diningRefresh();
+}
+function diningManualNext(){ diningNext(); diningResetAutoPlay(); }
+function diningManualPrevious(){ diningPrevious(); diningResetAutoPlay(); }
+function diningResetAutoPlay(){
+  clearInterval(diningAutoPlay);
+  diningAutoPlay = setInterval(diningNext, 5500);
+}
+
+diningRefresh();
+diningResetAutoPlay();
+/* ==================== end of dining room ==================== */
+const kitchenPhotos=[
+  "k1.jpg",
+  "k2.jpg",
+  "k3.jpg",
+  "k4.jpg"
+];
+
+let kitchenCurrent=0;
+let kitchenAutoPlay;
+
+function kitchenRefresh(){
+  document.getElementById("kitchenMain").src=kitchenPhotos[kitchenCurrent];
+  document.getElementById("kitchenSide1").src=kitchenPhotos[(kitchenCurrent+1)%kitchenPhotos.length];
+  document.getElementById("kitchenSide2").src=kitchenPhotos[(kitchenCurrent+2)%kitchenPhotos.length];
+  document.getElementById("kitchenCounter").innerHTML=(kitchenCurrent+1)+" / "+kitchenPhotos.length;
+}
+function kitchenNext(){
+  kitchenCurrent++;
+  if(kitchenCurrent>=kitchenPhotos.length) kitchenCurrent=0;
+  kitchenRefresh();
+}
+function kitchenPrevious(){
+  kitchenCurrent--;
+  if(kitchenCurrent<0) kitchenCurrent=kitchenPhotos.length-1;
+  kitchenRefresh();
+}
+function kitchenManualNext(){ kitchenNext(); kitchenResetAutoPlay(); }
+function kitchenManualPrevious(){ kitchenPrevious(); kitchenResetAutoPlay(); }
+function kitchenResetAutoPlay(){
+  clearInterval(kitchenAutoPlay);
+  kitchenAutoPlay = setInterval(kitchenNext, 5500);
+}
+
+kitchenRefresh();
+kitchenResetAutoPlay();
+/* ==================== end of kitchen ==================== */
+const gardenPhotos=[
+  "bg01.jpg",
+  "bg02.jpg",
+  "bg03.jpg",
+  "bg04.jpg",
+  "bg05.jpg",
+  "bg06.jpg",
+  "bg07.jpg",
+  "bg08.jpg"
+];
+
+let gardenCurrent=0;
+let gardenAutoPlay;
+
+function gardenRefresh(){
+  document.getElementById("gardenMain").src=gardenPhotos[gardenCurrent];
+  document.getElementById("gardenSide1").src=gardenPhotos[(gardenCurrent+1)%gardenPhotos.length];
+  document.getElementById("gardenSide2").src=gardenPhotos[(gardenCurrent+2)%gardenPhotos.length];
+  document.getElementById("gardenCounter").innerHTML=(gardenCurrent+1)+" / "+gardenPhotos.length;
+}
+function gardenNext(){
+  gardenCurrent++;
+  if(gardenCurrent>=gardenPhotos.length) gardenCurrent=0;
+  gardenRefresh();
+}
+function gardenPrevious(){
+  gardenCurrent--;
+  if(gardenCurrent<0) gardenCurrent=gardenPhotos.length-1;
+  gardenRefresh();
+}
+function gardenManualNext(){ gardenNext(); gardenResetAutoPlay(); }
+function gardenManualPrevious(){ gardenPrevious(); gardenResetAutoPlay(); }
+function gardenResetAutoPlay(){
+  clearInterval(gardenAutoPlay);
+  gardenAutoPlay = setInterval(gardenNext, 5500);
+}
+
+gardenRefresh();
+gardenResetAutoPlay();
+/* ==================== end of kitchen ==================== */
+const bathroomPhotos=[
+  "br01.jpg",
+  "br02.jpg",
+  "br03.jpg"
+];
+
+let bathroomCurrent=0;
+let bathroomAutoPlay;
+
+function bathroomRefresh(){
+  document.getElementById("bathroomMain").src=bathroomPhotos[bathroomCurrent];
+  document.getElementById("bathroomSide1").src=bathroomPhotos[(bathroomCurrent+1)%bathroomPhotos.length];
+  document.getElementById("bathroomSide2").src=bathroomPhotos[(bathroomCurrent+2)%bathroomPhotos.length];
+  document.getElementById("bathroomCounter").innerHTML=(bathroomCurrent+1)+" / "+bathroomPhotos.length;
+}
+function bathroomNext(){
+  bathroomCurrent++;
+  if(bathroomCurrent>=bathroomPhotos.length) bathroomCurrent=0;
+  bathroomRefresh();
+}
+function bathroomPrevious(){
+  bathroomCurrent--;
+  if(bathroomCurrent<0) bathroomCurrent=bathroomPhotos.length-1;
+  bathroomRefresh();
+}
+function bathroomManualNext(){ bathroomNext(); bathroomResetAutoPlay(); }
+function bathroomManualPrevious(){ bathroomPrevious(); bathroomResetAutoPlay(); }
+function bathroomResetAutoPlay(){
+  clearInterval(bathroomAutoPlay);
+  bathroomAutoPlay = setInterval(bathroomNext, 5500);
+}
+
+bathroomRefresh();
+bathroomResetAutoPlay();
+/* ==================== end of bathroom ==================== */
+
+const items4salePhotos=[
+  "FSSofa3Seater.jpg",
+  "FSSofa2Seater.jpg",
+  "FSSofaChair11.jpg"
+];
+
+let items4saleCurrent=0;
+let items4saleAutoPlay;
+
+function items4saleRefresh(){
+  document.getElementById("items4saleMain").src=items4salePhotos[items4saleCurrent];
+  document.getElementById("items4saleSide1").src=items4salePhotos[(items4saleCurrent+1)%items4salePhotos.length];
+  document.getElementById("items4saleSide2").src=items4salePhotos[(items4saleCurrent+2)%items4salePhotos.length];
+  document.getElementById("items4saleCounter").innerHTML=(items4saleCurrent+1)+" / "+items4salePhotos.length;
+}
+function items4saleNext(){
+  items4saleCurrent++;
+  if(items4saleCurrent>=items4salePhotos.length) items4saleCurrent=0;
+  items4saleRefresh();
+}
+function items4salePrevious(){
+  items4saleCurrent--;
+  if(items4saleCurrent<0) items4saleCurrent=items4salePhotos.length-1;
+  items4saleRefresh();
+}
+function items4saleManualNext(){ items4saleNext(); items4saleResetAutoPlay(); }
+function items4saleManualPrevious(){ items4salePrevious(); items4saleResetAutoPlay(); }
+function items4saleResetAutoPlay(){
+  clearInterval(items4saleAutoPlay);
+  items4saleAutoPlay = setInterval(items4saleNext, 4500);
+}
+
+items4saleRefresh();
+items4saleResetAutoPlay();
+/* ==================== end of items4sale ==================== */
+  
+function goTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function goBottom() {
+  window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+}
+</script>
+
+
+<button id="topBtn" onclick="goTop()">⬆ Top</button>
+<button id="bottomBtn" onclick="goBottom()">⬇ Down</button>
+</div></div>
+</body>
+</html>
