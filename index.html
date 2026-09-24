@@ -17,6 +17,10 @@ img { width:100%; border-radius:10px; max-width:1400px}
 .galleryControls{display:flex;justify-content:center;align-items:center;gap:10px;margin:2px;}
 .galleryControls button{width:50px;font-size:26px;}
 
+.top-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 5px; }
+.top-grid img { width: 100%; border-radius: 4px; }
+.top-grid a { text-align:center; text-decoration:none; color:#000; }
+
 .item-label { display:block; background:#fff; border-radius:6px; padding:6px 8px; margin:4px 0 10px; font-size:0.95em; }
 .item-label input { width:auto; margin-right:6px; }
 
@@ -115,10 +119,11 @@ p { margin:5px 0; }
   <button onclick="emailSelectedItems()">📧 Email us about the item(s) I've ticked</button>
 
   <p>new========================</p>
-  <div class="bannerx"> <h2>Perenials</h2></div>
+  <div class="bannerx"> <h2>M&S Abbey Sofas & chair</h2></div>
   <div class="top-grid">
-   <a href="#gerbera"><img src="PSorangegerbera.jpg"><p>Gerbera</p></a>
-   <a href="#lupins"><img src="PSpurplelupin.jpg"><p>Lupin</p></a>
+   <a href="#FSSofa3"><img src="FSSofa3Seater.jpg"><p>3 seater</p></a>
+   <a href="#FSSofa2"><img src="FSSofa2Seater.jpg"><p>2 seater</p></a>
+  <a href="#FSChair11"><img src="FSSofaChair11.jpg"><p>Chair</p></a>
   </div>
   <p>end of new========================</p>
   
@@ -135,6 +140,8 @@ p { margin:5px 0; }
    </div>
    <div class="galleryControls"> <button onclick="items4saleManualPrevious()">❮</button> <span id="items4saleCounter"></span> <button onclick="items4saleManualNext()">❯</button> </div>
   </div>
+
+  <div id="FSSofa3" class="card">
   <div class="top-grid">
    <div><a onclick="openLightbox('FSSofa3Seater.jpg')"><img src="FSSofa3Seater.jpg"><p style="padding-left:2em;">M&S ABBEY Bronco Leather Dark Brown 3 seater sofa. Size: W223 x H95 x D102cm</p></a>
    <label class="item-label"><input type="checkbox" class="item-select" data-label="3 Seater Sofa"> Interested in this</label></div>
@@ -142,6 +149,7 @@ p { margin:5px 0; }
    <label class="item-label"><input type="checkbox" class="item-select" data-label="2 Seater Sofa"> Interested in this</label></div>
    <div><a onclick="openLightbox('FSSofaChair11.jpg')"><img src="FSSofaChair11.jpg"><p style="padding-left:2em;">M&S ABBEY Bronco Leather Dark Brown chair. Size: W95 x H95 x D95cm</p></a>
    <label class="item-label"><input type="checkbox" class="item-select" data-label="Armchair"> Interested in this</label></div>
+  </div>
   </div>
  <p>&nbsp</p>
   
